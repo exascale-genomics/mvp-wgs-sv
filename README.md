@@ -45,6 +45,52 @@ INFO:    Build complete: parabricks-4.0
 Now we can go ahead and test a simple job to see if our Singularity container build was a success.
 
 ```
+arodriguez@polaris-login-02:~> qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q debug
+qsub: waiting for job 333796.polaris-pbs-01.hsn.cm.polaris.alcf.anl.gov to start
 
+arodriguez@x3107c0s19b0n0:~> singularity exec ./parabricks-4.0 pbrun -h
+Please visit https://docs.nvidia.com/clara/#parabricks for detailed documentation
+
+usage: pbrun <command> [<args>]
+Help: pbrun -h
+
+command can be a TOOL or FULL PIPELINE. Example:
+pbrun fq2bam --ref genome.fa --in-fq sample_1.fq.gz sample_2.fq.gz --out-bam sample.bam
+pbrun germline --ref genome.fa --in-fq sample_1.fq.gz sample_2.fq.gz --out-bam sample.bam --out-variants sample.vcf
+
+command options for standalone TOOL
+applybqsr               - Apply BQSR report to a BAM file and generate a new BAM file
+bam2fq                  - Convert a BAM file to FASTQ
+bammetrics              - Collect WGS Metrics on a BAM file
+bamsort                 - Sort a BAM file
+bqsr                    - Collect BQSR report on a BAM file
+collectmultiplemetrics  - Collect multiple classes of metrics on a BAM file
+dbsnp                   - Annotate variants based on a dbsnp
+deepvariant             - Run GPU-DeepVariant for calling germline variants
+fq2bam                  - Run bwa mem, co-ordinate sorting, marking duplicates, and Base Quality Score Recalibration
+genotypegvcf            - Convert a GVCF to VCF
+haplotypecaller         - Run GPU-HaplotypeCaller for calling germline variants
+indexgvcf               - Index a GVCF file
+mutectcaller            - Run GPU-Mutect2 for tumor-normal analysis
+postpon                 - Generate the final VCF output of doing mutect pon
+prepon                  - Build an index for PON file, which is the prerequisite to performing mutect pon
+rna_fq2bam              - Run RNA-seq data through the fq2bam pipeline
+starfusion              - Identify candidate fusion transcripts supported by Illumina reads
+
+command options for commonly used FULL PIPELINES
+germline                - Run the germline pipeline from FASTQ to VCF
+deepvariant_germline    - Run the germline pipeline from FASTQ to VCF using a deep neural network analysis
+somatic                 - Run the somatic pipeline from FASTQ to VCF
+
+Information about the software
+version                 - Current version of Parabricks
+
+Please visit https://docs.nvidia.com/clara/#parabricks for detailed documentation
+
+positional arguments:
+  command     The pipeline or tool to run.
+
+optional arguments:
+  -h, --help  show this help message and exit
 ```
 
