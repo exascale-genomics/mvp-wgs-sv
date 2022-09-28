@@ -1,7 +1,7 @@
 # polaris-wgs
 Running tests for NGS analysis on [Polaris ALCF](https://www.alcf.anl.gov/polaris)
 
-I will be testing several NGS tools for fast throughput analysis of WGS on Polaris.
+I will be testing several NGS tools for fast throughput analysis of WGS on Polaris focusing on the SV callers.
 
 ## NVIDIA Clara Parabricks
 First we will try [NVIDIA Clara-Parabricks](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/clara/containers/clara-parabricks). 
