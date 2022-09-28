@@ -7,8 +7,8 @@ I will be testing several NGS tools for fast throughput analysis of WGS on Polar
 First we will try [NVIDIA Clara-Parabricks](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/clara/containers/clara-parabricks). 
 The container is distributed via Docker and unfortunately Polaris does not allow usage of Docker. In order to use Parabricks within Polaris we must first create a Singularity container:
 ```
-module load singularity/3.8.7
-singularity  build parabricks-4.0 docker://nvcr.io/nvidia/clara/clara-parabricks:4.0.0-1
+$module load singularity/3.8.7
+$singularity  build parabricks-4.0 docker://nvcr.io/nvidia/clara/clara-parabricks:4.0.0-1
 INFO:    Starting build...
 Getting image source signatures
 Copying blob d7bfe07ed847 done
