@@ -1,7 +1,7 @@
 # Project Plan for MVP Whole Genome Structural Variant and PheWAS Analysis on Polaris
 
 We will have access to approximately 10,000 whole genome sequences from the MVP community.
-Performing analysis on the whole genome sequences can be very computatioanl and time intensive. We would like to use ALCF's Polaris machine to perform the workflows for NGS sequence analysis.
+Performing analysis on the whole genome sequences can be very computational and time intensive. We would like to use ALCF's Polaris machine to perform the workflows for NGS sequence analysis.
 We will have the opportunity to perform a population analysis so we can conclude with a Phewas analysis on the results from the whole genome analysis.
 
 Below is a draft of what steps are needed to achieve the goals on this project. Please modify appropriately.
