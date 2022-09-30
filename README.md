@@ -11,7 +11,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
    * Login
    * Submit interactive and script jobs
 2. Gather a set of NGS and PheWAS/GWAS tools that will be tested on Polaris. Each tool will most likely encounter its own issues and will have to deal with it appropriately.
-   * NVIDIA Clara-Parabricks - Create Singularity container [progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/parabricks_readme.md)
+   * NVIDIA Clara-Parabricks - Create Singularity container [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/parabricks_readme.md)]
    * SVision
    * SAIGE
    * ...
