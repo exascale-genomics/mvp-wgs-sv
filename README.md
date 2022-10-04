@@ -10,6 +10,9 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 1. Get familiar with Polaris
    * Get user accounts
    * Login
+     ```
+     ssh arodriguez@polaris.alcf.anl.gov
+     ```
    * Submit interactive and script jobs
    ```
    qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q debug
