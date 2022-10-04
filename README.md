@@ -19,7 +19,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
    * ...
 3. Test each of the tools from the previous set
 4. Evaluate outputs - Determine which set of tools are best for our analysis, but be dynamic enough that if new tools come up, we can shift focus.
-6. Download 1KG Whole genome datasets [Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/1kg_download.txt)
+6. Download 1KG Whole genome datasets [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/1kg_download.txt)]
 7. Create/test submission engine (i.e. Parsl, Balsam, etc)
    * Look [here](https://www.alcf.anl.gov/files/uram_workflows_performanceworkshop2018.pdf)
    * [Parsl on Polaris](https://github.com/argonne-lcf/user-guides/blob/workflow-docs/docs/polaris/workflows.md)
