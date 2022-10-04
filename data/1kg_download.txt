@@ -1,0 +1,24 @@
+# Data Download for Testing
+#
+# We will download data from [1000 Genome Project](https://www.internationalgenome.org) to test our tools on the Polaris Supercomputer.
+# We have selected to download sample [HG00138](https://www.internationalgenome.org/data-portal/sample/HG00138) 
+#
+#      Sex:               Male
+#      Populations:       British in England and Scotland, European Ancestry
+#      Biosample ID:      SAME123059
+#      Cell line source:  HG00138 at Coriell 
+#
+# The project provides both low coverage and 30x coverage data files for each of the samples.
+# Low coverage files are provided in fastq.gz format, while 30x coverage files are in CRAM format.
+# We will do quick tests using the low coverage data and perform a final test on the 30x data.
+# We will need to convert from CRAM files to fastq files for our testing.
+
+mkdir -p ~/wgs_test/HG00138
+cd ~/wgs_test/HG00138
+mkdir ./low_cov
+mkdir ./30x_cov
+cd ./low_cov
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR016/ERR016162/ERR016162_1.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR016/ERR016162/ERR016162_2.fastq.gz
+cd ../30_cov
+wget  wget ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR324/ERR3240144/HG00138.final.cram
