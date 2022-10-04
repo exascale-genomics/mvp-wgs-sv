@@ -14,9 +14,9 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
      ssh arodriguez@polaris.alcf.anl.gov
      ```
    * Submit interactive and script jobs
-   ```
-   qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q debug
-   ```
+     ```
+     qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q debug
+     ```
 2. Gather a set of NGS and PheWAS/GWAS tools that will be tested on Polaris. Each tool will most likely encounter its own issues and will have to deal with it appropriately.
    * NVIDIA Clara-Parabricks - Create Singularity container [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/parabricks_readme.md)]
    * [SVision](https://github.com/xjtu-omics/SVision)
