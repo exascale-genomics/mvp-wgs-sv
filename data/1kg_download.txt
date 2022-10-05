@@ -39,3 +39,17 @@ samtools faidx GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 ## Create the BWA indices
 bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 
+## install additional tools for index making
+# bwa
+mkdir -p ~/wgs_test/tools/bwa
+cd ~/wgs_test/tools/bwa
+git clone https://github.com/lh3/bwa.git
+cd bwa; make
+
+# samtools
+
+
+
+# run Parabricks
+qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q debug
+singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref ~/wgs_test/reference/hg19/hg19.fa  --in-fq ~/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz ~/wgs_test/HG00138/low_cov/ERR016162_2.fastq.gz --out-variants ~/wgs_test/HG00138/output/low_cov --out-bam  ~/wgs_test/HG00138/output/low_cov/HG00138.bam --out-variants ~/wgs_test/HG00138/output/low_cov/HG00138.vcf
