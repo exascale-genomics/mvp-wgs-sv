@@ -26,3 +26,7 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR016/ERR016162/ERR016162_2.fastq.gz
 cd ../30_cov
 wget  wget ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR324/ERR3240144/HG00138.final.cram
 
+# Also download the reference hg19 file which we will align to:
+mkdir -p ~/wgs_test/reference/hg19
+cd ~/wgs_test/reference/hg19
+wget http://hgdownload.cse.ucsc.edu/goldenpath/hg19/bigZips/hg19.fa.gz
