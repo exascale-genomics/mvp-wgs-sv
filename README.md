@@ -27,7 +27,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 4. Evaluate outputs - Determine which set of tools are best for our analysis, but be dynamic enough that if new tools come up, we can shift focus.
 6. Download data [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/1kg_download.txt)]: 
    * [1KG Whole genome datasets](https://www.cell.com/cell/fulltext/S0092-8674(22)00991-6) 
-   * [Reference hg19](http://hgdownload.cse.ucsc.edu/goldenpath/hg19/bigZips/hg19.fa.gz)
+   * [Reference hg38](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz)
 7. Create/test submission engine (i.e. Parsl, Balsam, etc)
    * Look [here](https://www.alcf.anl.gov/files/uram_workflows_performanceworkshop2018.pdf)
    * [Parsl on Polaris](https://github.com/argonne-lcf/user-guides/blob/workflow-docs/docs/polaris/workflows.md)
