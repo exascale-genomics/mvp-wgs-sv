@@ -26,7 +26,16 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR016/ERR016162/ERR016162_2.fastq.gz
 cd ../30_cov
 wget  wget ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR324/ERR3240144/HG00138.final.cram
 
-# Also download the reference hg19 file which we will align to:
-mkdir -p ~/wgs_test/reference/hg19
-cd ~/wgs_test/reference/hg19
-wget http://hgdownload.cse.ucsc.edu/goldenpath/hg19/bigZips/hg19.fa.gz
+# Also download the reference hg38 file which we will align to:
+mkdir -p ~/wgs_test/reference/hg38
+cd ~/wgs_test/reference/hg38
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
+## Unzip and index the reference
+gunzip GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
+
+## Create an FAI index
+samtools faidx GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+
+## Create the BWA indices
+bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+
