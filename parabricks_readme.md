@@ -129,7 +129,7 @@ The execution times can be seen in the table below:
 |  Parabricks accelerated Genomics Pipeline | Sorting Phase-II   |  4.0.0-1 | 10 |  X |
 |  Parabricks accelerated Genomics Pipeline |  Marking Duplicates, BQSR   |  4.0.0-1 | 20 |  X |
 |  Parabricks accelerated Genomics Pipeline |  deepvariant   |  4.0.0-1 | 337 |  X |
-| |  |  Total | 472 seconds = 7.9 minutes |   |
+| |  |  <b>Total</b> | <b>472 seconds = 7.9 minutes</b> |   |
 
 
 
