@@ -144,8 +144,11 @@ qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q
 # load the required modules
 module load singularity/3.8.7
 
+# convert from CRAM to fq
+singularity run --nv  ./parabricks-4.0 pbrun bam2fq --in-bam ~/wgs_test/HG00138/30x_cov/HG00138.final.cram  --out-prefix ~/wgs_test/HG00138/30x_cov/HG00138_30x_2.fastq --ref  ~/wgs_test/reference/GRCh38_CRAM/GRCh38_full_analysis_set_plus_decoy_hla.fa
+
 # run the deepvariant-germline workflow using the low-coverage sequences
-singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref ~/wgs_test/reference/hg38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna  --in-fq ~/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz ~/wgs_test/HG00138/low_cov/ERR016162_2.fastq.gz --out-variants ~/wgs_test/HG00138/output/low_cov --out-bam  ~/wgs_test/HG00138/output/low_cov/HG00138.bam --out-variants ~/wgs_test/HG00138/output/low_cov/HG00138.vcf
+singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref /home/arodriguez/wgs_test/reference/GRCh38_CRAM/GRCh38_full_analysis_set_plus_decoy_hla.fa  --in-fq /home/arodriguez/wgs_test/HG00138/30x_cov/HG00138_30x_2.fastq_1.fastq.gz /home/arodriguez/wgs_test/HG00138/30x_cov/HG00138_30x_2.fastq_2.fastq.gz --out-bam  /home/arodriguez/wgs_test/HG00138/output/30x/HG00138.bam --out-variants  /home/arodriguez/wgs_test/HG00138/output/30x/HG00138.vcf
 
 ```
 
@@ -155,7 +158,7 @@ Below are the execution times:
 
 | Tools | Description | Version | Execution Time (seconds) | GPU Usage |
 | :-: | :-----: |  :-----: | :-----: |  :-----: |
-|  Parabricks bam2fq | Convert CRAM to fastq    |  4.0.0-1 | - |  X |
+|  Parabricks accelerated Genomics Pipeline | bam2fq    |  4.0.0-1 | 625 |  X |
 |  Parabricks accelerated Genomics Pipeline | BWA-mem Sorting Phase-I    |  4.0.0-1 | - |  X |
 |  Parabricks accelerated Genomics Pipeline | Sorting Phase-II   |  4.0.0-1 | - |  X |
 |  Parabricks accelerated Genomics Pipeline |  Marking Duplicates, BQSR   |  4.0.0-1 | - |  X |
