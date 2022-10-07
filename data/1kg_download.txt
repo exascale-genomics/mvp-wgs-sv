@@ -24,7 +24,7 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR016/ERR016162/ERR016162_2.fastq.gz
 # This data is about 15GB. If this proves to be too long of a process with wget,
 # you can use globus transfer. Otherwise, use the following commands:
 cd ../30_cov
-wget  wget ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR324/ERR3240144/HG00138.final.cram
+wget ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR324/ERR3240144/HG00138.final.cram
 
 ## install additional tools for index making
 # bwa
