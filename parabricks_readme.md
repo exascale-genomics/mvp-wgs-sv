@@ -95,4 +95,10 @@ optional arguments:
 ```
 
 ## Sequence and Reference data
-Several files for testing will be downloaded. The steps taken can be seen [here](https://github.com/exascale-genomics/mvp-wgs-sv/edit/main/data/parabricks_data.md)
+Several files for testing will be downloaded. The description and steps taken can be seen [here]([https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/1kg_download.txt](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/analysisSet/) and the directions.
+
+## Testing
+NVIDIA Clara-Parabricks provides multiple [tools](https://docs.nvidia.com/clara/parabricks/4.0.0/index.html#software-overview) and [workflows](https://docs.nvidia.com/clara/parabricks/4.0.0/index.html#parabricks-pipelines). We will be testing the tools specified in the link above as well as the workflows for germline variant detection using both low-coverage and 30X whole-genome samples. 
+The reference data used is [GRCh38](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz)
+
+### Low Coverage Whole-genome Analysis
