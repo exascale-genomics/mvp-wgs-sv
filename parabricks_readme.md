@@ -132,5 +132,32 @@ The execution times can be seen in the table below:
 | |  |  <b>Total</b> | <b>472 seconds = 7.9 minutes</b> |   |
 
 
-
 ### 30X Coverage Whole-genome Analysis
+The input data for the 30X sequences are in CRAM format. Since the Parabricks pipeline requires fastq as input, we will need to run the Parabricks tool [bam2fq](https://docs.nvidia.com/clara/parabricks/4.0.0/Documentation/ToolDocs/man_bam2fq.html#man-bam2fq) before running the pipeline.
+
+The following was used to execute the analysis interactively on a Polaris node:
+
+```
+# Ask for an interactive node on Polaris and wait until this is provided
+qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q debug
+
+# load the required modules
+module load singularity/3.8.7
+
+# run the deepvariant-germline workflow using the low-coverage sequences
+singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref ~/wgs_test/reference/hg38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna  --in-fq ~/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz ~/wgs_test/HG00138/low_cov/ERR016162_2.fastq.gz --out-variants ~/wgs_test/HG00138/output/low_cov --out-bam  ~/wgs_test/HG00138/output/low_cov/HG00138.bam --out-variants ~/wgs_test/HG00138/output/low_cov/HG00138.vcf
+
+```
+
+The log file of the run can be reached [here](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/pb_deepvariant_germline_wf_30x_coverage_log.txt).
+
+Below are the execution times:
+
+| Tools | Description | Version | Execution Time (seconds) | GPU Usage |
+| :-: | :-----: |  :-----: | :-----: |  :-----: |
+|  Parabricks bam2fq | Convert CRAM to fastq    |  4.0.0-1 | - |  X |
+|  Parabricks accelerated Genomics Pipeline | BWA-mem Sorting Phase-I    |  4.0.0-1 | - |  X |
+|  Parabricks accelerated Genomics Pipeline | Sorting Phase-II   |  4.0.0-1 | - |  X |
+|  Parabricks accelerated Genomics Pipeline |  Marking Duplicates, BQSR   |  4.0.0-1 | - |  X |
+|  Parabricks accelerated Genomics Pipeline |  deepvariant   |  4.0.0-1 | - |  X |
+| |  |  <b>Total</b> | <b>- seconds = - minutes</b> |   |
