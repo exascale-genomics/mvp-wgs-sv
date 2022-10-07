@@ -119,6 +119,6 @@ singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref ~/wgs_t
 
 ```
 
-The log file of the run can be reached [here](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/pb_deepvariant_germline_wf_low_coverage_log.txt)
+The log file of the run can be reached [here](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/pb_deepvariant_germline_wf_low_coverage_log.txt).
 
 ### 30X Coverage Whole-genome Analysis
