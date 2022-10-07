@@ -102,5 +102,23 @@ NVIDIA Clara-Parabricks provides multiple [tools](https://docs.nvidia.com/clara/
 
 The reference data used is [GRCh38](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/analysisSet/) and the directions on how to download this were taken from [here](https://docs.nvidia.com/clara/parabricks/4.0.0/How-Tos/WholeGenomeGermlineSmallVariants.html#downloading-and-indexing-a-reference-genome-and-known-sites).
 
-### Low-Coverage Whole-genome Analysis
 The [deepvariant-germline workflow](https://docs.nvidia.com/clara/parabricks/4.0.0/Documentation/ToolDocs/man_deepvariant_germline.html#deepvariant-germline) runs through multiple tools such as bwa-mem, mark duplicates, and deepVariant. The workflow requires fastq files as input and provides an alignment BAM file and VCF as outputs. These versions of the tools take advantage of Polaris's GPU framework by accelerating the analysis. 
+
+### Low-Coverage Whole-genome Analysis
+The following was used to execute the analysis interactively on a Polaris node:
+
+```
+# Ask for an interactive node on Polaris and wait until this is provided
+qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q debug
+
+# load the required modules
+module load singularity/3.8.7
+
+# run the deepvariant-germline workflow using the low-coverage sequences
+singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref ~/wgs_test/reference/hg38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna  --in-fq ~/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz ~/wgs_test/HG00138/low_cov/ERR016162_2.fastq.gz --out-variants ~/wgs_test/HG00138/output/low_cov --out-bam  ~/wgs_test/HG00138/output/low_cov/HG00138.bam --out-variants ~/wgs_test/HG00138/output/low_cov/HG00138.vcf
+
+```
+
+The log file of the run can be reached [here]()
+
+### 30X Coverage Whole-genome Analysis
