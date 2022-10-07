@@ -121,4 +121,14 @@ singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref ~/wgs_t
 
 The log file of the run can be reached [here](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/pb_deepvariant_germline_wf_low_coverage_log.txt).
 
+The execution times can be seen in the table below:
+
+| Tools | Description | Version | Execution Time (seconds) | GPU Usage |
+| :-: | :-----: |  :-----: | :-----: |  :-----: |
+|  Parabricks accelerated Genomics Pipeline | BWA-mem Sorting Phase-I    |  4.0.0-1 | 105 |  X |
+|  Parabricks accelerated Genomics Pipeline | Sorting Phase-II   |  4.0.0-1 | 10 |  X |
+|  Parabricks accelerated Genomics Pipeline |  Marking Duplicates, BQSR   |  4.0.0-1 | 20 |  X |
+|  Parabricks accelerated Genomics Pipeline |  deepvariant   |  4.0.0-1 | 337 |  X |
+
+
 ### 30X Coverage Whole-genome Analysis
