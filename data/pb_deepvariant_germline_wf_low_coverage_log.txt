@@ -1,0 +1,162 @@
+arodriguez@x3003c0s31b1n0:~> module load singularity/3.8.7
+arodriguez@x3003c0s31b1n0:~> singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref ~/wgs_test/refer
+ence/hg38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna  --in-fq ~/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz ~/w
+gs_test/HG00138/low_cov/ERR016162_2.fastq.gz --out-variants ~/wgs_test/HG00138/output/low_cov --out-bam  ~/wgs_test/HG
+00138/output/low_cov/HG00138.bam --out-variants ~/wgs_test/HG00138/output/low_cov/HG00138.vcf
+Please visit https://docs.nvidia.com/clara/#parabricks for detailed documentation
+
+[Parabricks Options Mesg]: Automatically generating ID prefix
+[Parabricks Options Mesg]: Read group created for /home/arodriguez/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz and
+/home/arodriguez/wgs_test/HG00138/low_cov/ERR016162_2.fastq.gz
+[Parabricks Options Mesg]: @RG\tID:ERR016162.1.1\tLB:lib1\tPL:bar\tSM:sample\tPU:ERR016162.1.1
+
+[Parabricks Options Mesg]: Checking argument compatibility
+[Parabricks Options Mesg]: Read group created for /home/arodriguez/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz and
+/home/arodriguez/wgs_test/HG00138/low_cov/ERR016162_2.fastq.gz
+[Parabricks Options Mesg]: @RG\tID:ERR016162.1.1\tLB:lib1\tPL:bar\tSM:sample\tPU:ERR016162.1.1
+[PB Info 2022-Oct-06 20:15:50] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:15:50] ||                 Parabricks accelerated Genomics Pipeline                 ||
+[PB Info 2022-Oct-06 20:15:50] ||                              Version 4.0.0-1                             ||
+[PB Info 2022-Oct-06 20:15:50] ||                       GPU-BWA mem, Sorting Phase-I                       ||
+[PB Info 2022-Oct-06 20:15:50] ------------------------------------------------------------------------------
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[PB Info 2022-Oct-06 20:15:52] GPU-BWA mem
+[PB Info 2022-Oct-06 20:15:52] ProgressMeter	Reads		Base Pairs Aligned
+[PB Info 2022-Oct-06 20:16:03] 5049510		500000000
+[PB Info 2022-Oct-06 20:16:09] 10099020	1010000000
+[PB Info 2022-Oct-06 20:16:16] 15148530	1530000000
+[PB Info 2022-Oct-06 20:16:22] 20198040	2060000000
+[PB Info 2022-Oct-06 20:16:29] 25247550	2540000000
+[PB Info 2022-Oct-06 20:16:35] 30297060	3080000000
+[PB Info 2022-Oct-06 20:16:42] 35346570	3570000000
+[PB Info 2022-Oct-06 20:16:48] 40396080	4080000000
+[PB Info 2022-Oct-06 20:16:55] 45445590	4590000000
+[PB Info 2022-Oct-06 20:17:01] 50495100	5100000000
+[PB Info 2022-Oct-06 20:17:07] 55544610	5600000000
+[PB Info 2022-Oct-06 20:17:14] 60594120	6120000000
+[PB Info 2022-Oct-06 20:17:20] 65643630	6620000000
+[PB Info 2022-Oct-06 20:17:26] 70693140	7140000000
+[PB Info 2022-Oct-06 20:17:35]
+GPU-BWA Mem time: 102.485371 seconds
+[PB Info 2022-Oct-06 20:17:35] GPU-BWA Mem is finished.
+
+[main] CMD: /usr/local/parabricks/binaries//bin/bwa mem -Z ./pbOpts.txt /home/arodriguez/wgs_test/reference/hg38/GCA_0
+00001405.15_GRCh38_no_alt_analysis_set.fna /home/arodriguez/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz /home/arodri
+guez/wgs_test/HG00138/low_cov/ERR016162_2.fastq.gz @RG\tID:ERR016162.1.1\tLB:lib1\tPL:bar\tSM:sample\tPU:ERR016162.1.1
+[main] Real time: 105.060 sec; CPU: 4259.966 sec
+[PB Info 2022-Oct-06 20:17:35] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:17:35] ||        Program:                      GPU-BWA mem, Sorting Phase-I        ||
+[PB Info 2022-Oct-06 20:17:35] ||        Version:                                           4.0.0-1        ||
+[PB Info 2022-Oct-06 20:17:35] ||        Start Time:                       Thu Oct  6 20:15:50 2022        ||
+[PB Info 2022-Oct-06 20:17:35] ||        End Time:                         Thu Oct  6 20:17:35 2022        ||
+[PB Info 2022-Oct-06 20:17:35] ||        Total Time:                            1 minute 45 seconds        ||
+[PB Info 2022-Oct-06 20:17:35] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:17:36] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:17:36] ||                 Parabricks accelerated Genomics Pipeline                 ||
+[PB Info 2022-Oct-06 20:17:36] ||                              Version 4.0.0-1                             ||
+[PB Info 2022-Oct-06 20:17:36] ||                             Sorting Phase-II                             ||
+[PB Info 2022-Oct-06 20:17:36] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:17:36] progressMeter - Percentage
+[PB Info 2022-Oct-06 20:17:36] 0.0	 0.00 GB
+[PB Info 2022-Oct-06 20:17:46] Sorting and Marking: 10.000 seconds
+[PB Info 2022-Oct-06 20:17:46] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:17:46] ||        Program:                                  Sorting Phase-II        ||
+[PB Info 2022-Oct-06 20:17:46] ||        Version:                                           4.0.0-1        ||
+[PB Info 2022-Oct-06 20:17:46] ||        Start Time:                       Thu Oct  6 20:17:36 2022        ||
+[PB Info 2022-Oct-06 20:17:46] ||        End Time:                         Thu Oct  6 20:17:46 2022        ||
+[PB Info 2022-Oct-06 20:17:46] ||        Total Time:                                     10 seconds        ||
+[PB Info 2022-Oct-06 20:17:46] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:17:46] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:17:46] ||                 Parabricks accelerated Genomics Pipeline                 ||
+[PB Info 2022-Oct-06 20:17:46] ||                              Version 4.0.0-1                             ||
+[PB Info 2022-Oct-06 20:17:46] ||                         Marking Duplicates, BQSR                         ||
+[PB Info 2022-Oct-06 20:17:46] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:17:46] progressMeter -	Percentage
+[PB Info 2022-Oct-06 20:17:56] 70.5	 6.33 GB
+[PB Info 2022-Oct-06 20:18:06] 100.0	 0.00 GB
+[PB Info 2022-Oct-06 20:18:06] BQSR and writing final BAM:  20.015 seconds
+[PB Info 2022-Oct-06 20:18:06] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:18:06] ||        Program:                          Marking Duplicates, BQSR        ||
+[PB Info 2022-Oct-06 20:18:06] ||        Version:                                           4.0.0-1        ||
+[PB Info 2022-Oct-06 20:18:06] ||        Start Time:                       Thu Oct  6 20:17:46 2022        ||
+[PB Info 2022-Oct-06 20:18:06] ||        End Time:                         Thu Oct  6 20:18:06 2022        ||
+[PB Info 2022-Oct-06 20:18:06] ||        Total Time:                                     20 seconds        ||
+[PB Info 2022-Oct-06 20:18:06] ------------------------------------------------------------------------------
+Detected 4 CUDA Capable device(s), considering 4 device(s)
+  CUDA Driver Version / Runtime Version          11.4 / 11.2
+Using model for CUDA Capability Major/Minor version number:    80
+/usr/local/parabricks/binaries//bin/deepvariant /home/arodriguez/wgs_test/reference/hg38/GCA_000001405.15_GRCh38_no_al
+t_analysis_set.fna /home/arodriguez/wgs_test/HG00138/output/low_cov/HG00138.bam 4 -o /home/arodriguez/wgs_test/HG00138
+/output/low_cov/HG00138.vcf --model /usr/local/parabricks/binaries//model/80/shortread/deepvariant.eng -n 4 --channel_
+insert_size --pileup_image_width 221 --max_reads_per_partition 1500 --partition_size 1000 --vsc_min_count_snps 2 --vsc
+_min_count_indels 2 --vsc_min_fraction_snps 0.12 --min_mapping_quality 5 --min_base_quality 10 --alt_aligned_pileup no
+ne --variant_caller VERY_SENSITIVE_CALLER
+[PB Info 2022-Oct-06 20:18:14] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:18:14] ||                 Parabricks accelerated Genomics Pipeline                 ||
+[PB Info 2022-Oct-06 20:18:14] ||                              Version 4.0.0-1                             ||
+[PB Info 2022-Oct-06 20:18:14] ||                                deepvariant                               ||
+[PB Info 2022-Oct-06 20:18:14] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:18:14] Starting DeepVariant
+[PB Info 2022-Oct-06 20:18:14] Running with 4 gpu, each with 4 workers
+[PB Info 2022-Oct-06 20:18:26] ProgressMeter -	Current-Locus	Elapsed-Minutes
+[PB Info 2022-Oct-06 20:18:32] ProgressMeter -	chr1:10000	0.1
+[PB Info 2022-Oct-06 20:18:38] ProgressMeter -	chr1:10000	0.2
+[PB Info 2022-Oct-06 20:18:44] ProgressMeter -	chr1:10000	0.3
+[PB Info 2022-Oct-06 20:18:50] ProgressMeter -	chr1:31465000	0.4
+[PB Info 2022-Oct-06 20:18:56] ProgressMeter -	chr1:85571000	0.5
+[PB Info 2022-Oct-06 20:19:02] ProgressMeter -	chr1:161367000	0.6
+[PB Info 2022-Oct-06 20:19:08] ProgressMeter -	chr1:217117000	0.7
+[PB Info 2022-Oct-06 20:19:14] ProgressMeter -	chr2:23014000	0.8
+[PB Info 2022-Oct-06 20:19:20] ProgressMeter -	chr2:76042000	0.9
+[PB Info 2022-Oct-06 20:19:26] ProgressMeter -	chr2:132749000	1.0
+[PB Info 2022-Oct-06 20:19:32] ProgressMeter -	chr2:187518000	1.1
+[PB Info 2022-Oct-06 20:19:38] ProgressMeter -	chr3:1152000	1.2
+[PB Info 2022-Oct-06 20:19:44] ProgressMeter -	chr3:53969000	1.3
+[PB Info 2022-Oct-06 20:19:50] ProgressMeter -	chr3:106776000	1.4
+[PB Info 2022-Oct-06 20:19:56] ProgressMeter -	chr3:159599000	1.5
+[PB Info 2022-Oct-06 20:20:02] ProgressMeter -	chr4:18662000	1.6
+[PB Info 2022-Oct-06 20:20:08] ProgressMeter -	chr4:71926000	1.7
+[PB Info 2022-Oct-06 20:20:14] ProgressMeter -	chr4:125405000	1.8
+[PB Info 2022-Oct-06 20:20:20] ProgressMeter -	chr4:177695000	1.9
+[PB Info 2022-Oct-06 20:20:26] ProgressMeter -	chr5:39865000	2.0
+[PB Info 2022-Oct-06 20:20:32] ProgressMeter -	chr5:99771000	2.1
+[PB Info 2022-Oct-06 20:20:38] ProgressMeter -	chr5:153874000	2.2
+[PB Info 2022-Oct-06 20:20:44] ProgressMeter -	chr6:25712000	2.3
+[PB Info 2022-Oct-06 20:20:50] ProgressMeter -	chr6:78475000	2.4
+[PB Info 2022-Oct-06 20:20:56] ProgressMeter -	chr6:133296000	2.5
+[PB Info 2022-Oct-06 20:21:02] ProgressMeter -	chr7:18523000	2.6
+[PB Info 2022-Oct-06 20:21:08] ProgressMeter -	chr7:76162000	2.7
+[PB Info 2022-Oct-06 20:21:14] ProgressMeter -	chr7:131132000	2.8
+[PB Info 2022-Oct-06 20:21:20] ProgressMeter -	chr8:26638000	2.9
+[PB Info 2022-Oct-06 20:21:26] ProgressMeter -	chr8:79188000	3.0
+[PB Info 2022-Oct-06 20:21:32] ProgressMeter -	chr8:136546000	3.1
+[PB Info 2022-Oct-06 20:21:38] ProgressMeter -	chr9:68556000	3.2
+[PB Info 2022-Oct-06 20:21:44] ProgressMeter -	chr9:123095000	3.3
+[PB Info 2022-Oct-06 20:21:50] ProgressMeter -	chr10:40592000	3.4
+[PB Info 2022-Oct-06 20:21:56] ProgressMeter -	chr10:98452000	3.5
+[PB Info 2022-Oct-06 20:22:02] ProgressMeter -	chr11:22157000	3.6
+[PB Info 2022-Oct-06 20:22:08] ProgressMeter -	chr11:78809000	3.7
+[PB Info 2022-Oct-06 20:22:14] ProgressMeter -	chr11:131773000	3.8
+[PB Info 2022-Oct-06 20:22:20] ProgressMeter -	chr12:51342000	3.9
+[PB Info 2022-Oct-06 20:22:26] ProgressMeter -	chr12:107605000	4.0
+[PB Info 2022-Oct-06 20:22:32] ProgressMeter -	chr13:42361000	4.1
+[PB Info 2022-Oct-06 20:22:38] ProgressMeter -	chr13:95594000	4.2
+[PB Info 2022-Oct-06 20:22:44] ProgressMeter -	chr14:57803000	4.3
+[PB Info 2022-Oct-06 20:22:50] ProgressMeter -	chr15:28953000	4.4
+[PB Info 2022-Oct-06 20:22:56] ProgressMeter -	chr15:86522000	4.5
+[PB Info 2022-Oct-06 20:23:02] ProgressMeter -	chr16:50124000	4.6
+[PB Info 2022-Oct-06 20:23:08] ProgressMeter -	chr17:15676000	4.7
+[PB Info 2022-Oct-06 20:23:14] ProgressMeter -	chr17:79988000	4.8
+[PB Info 2022-Oct-06 20:23:20] ProgressMeter -	chr18:60027000	4.9
+[PB Info 2022-Oct-06 20:23:26] ProgressMeter -	chr19:39187000	5.0
+[PB Info 2022-Oct-06 20:23:32] ProgressMeter -	chr20:35133000	5.1
+[PB Info 2022-Oct-06 20:23:38] ProgressMeter -	chr21:34285000	5.2
+[PB Info 2022-Oct-06 20:23:44] ProgressMeter -	chrX:55224000	5.3
+[PB Info 2022-Oct-06 20:23:51] Deepvariant is finished, total time is 324.667 seconds
+[PB Info 2022-Oct-06 20:23:51] ------------------------------------------------------------------------------
+[PB Info 2022-Oct-06 20:23:51] ||        Program:                                       deepvariant        ||
+[PB Info 2022-Oct-06 20:23:51] ||        Version:                                           4.0.0-1        ||
+[PB Info 2022-Oct-06 20:23:51] ||        Start Time:                       Thu Oct  6 20:18:14 2022        ||
+[PB Info 2022-Oct-06 20:23:51] ||        End Time:                         Thu Oct  6 20:23:51 2022        ||
+[PB Info 2022-Oct-06 20:23:51] ||        Total Time:                           5 minutes 37 seconds        ||
+[PB Info 2022-Oct-06 20:23:51] ------------------------------------------------------------------------------
