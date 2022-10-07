@@ -28,7 +28,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
    * [GATK-sv](https://github.com/broadinstitute/gatk-sv)
    * [DeepSV](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3299-y)
    * [MANTA](https://github.com/Illumina/manta) - consider modifications made [here](https://www.nature.com/articles/s41525-021-00267-9)
-   * [DeepSVFilter](https://github.com/yongzhuang/DeepSVFilter)
+   * [DeepSVFilter](https://github.com/yongzhuang/DeepSVFilter) - Tool used to filter SV calls from other SV callers (i.e. Delly, Lumpy, Manta)
    * SAIGE
    * ...
 4. Test each of the tools from the previous set
