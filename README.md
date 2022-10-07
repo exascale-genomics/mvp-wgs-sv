@@ -17,18 +17,18 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
      ```
      qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q debug
      ```
-2. Gather a set of NGS and PheWAS/GWAS tools that will be tested on Polaris. Each tool will most likely encounter its own issues and will have to deal with it appropriately.
+2. Download data [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/1kg_download.txt)]: 
+   * [1KG Whole genome datasets](https://www.cell.com/cell/fulltext/S0092-8674(22)00991-6) 
+   * Reference [hg38](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz)
+3. Gather a set of NGS and PheWAS/GWAS tools that will be tested on Polaris. Each tool will most likely encounter its own issues and will have to deal with it appropriately.
    * NVIDIA Clara-Parabricks - Create Singularity container [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/parabricks_readme.md)]
    * [DeepVariant](https://ai.googleblog.com/search/label/Google%20Genomics) - included within parabricks
    * [SVision](https://github.com/xjtu-omics/SVision)
    * [AstraZeneca tools](https://github.com/AstraZeneca)
    * SAIGE
    * ...
-3. Test each of the tools from the previous set
-4. Evaluate outputs - Determine which set of tools are best for our analysis, but be dynamic enough that if new tools come up, we can shift focus.
-6. Download data [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/1kg_download.txt)]: 
-   * [1KG Whole genome datasets](https://www.cell.com/cell/fulltext/S0092-8674(22)00991-6) 
-   * Reference [hg38](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz)
+4. Test each of the tools from the previous set
+5. Evaluate outputs - Determine which set of tools are best for our analysis, but be dynamic enough that if new tools come up, we can shift focus.
 7. Create/test submission engine (i.e. Parsl, Balsam, etc)
    * Look [here](https://www.alcf.anl.gov/files/uram_workflows_performanceworkshop2018.pdf)
    * [Parsl on Polaris](https://github.com/argonne-lcf/user-guides/blob/workflow-docs/docs/polaris/workflows.md)
