@@ -94,3 +94,5 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
+## Sequence and Reference data
+Several files for testing will be downloaded. The steps taken can be seen [here](https://github.com/exascale-genomics/mvp-wgs-sv/edit/main/data/parabricks_data.md)
