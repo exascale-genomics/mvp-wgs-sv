@@ -27,7 +27,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
    * [AstraZeneca tools](https://github.com/AstraZeneca)
    * [GATK-sv](https://github.com/broadinstitute/gatk-sv)
    * [DeepSV](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3299-y)
-   * [GATK-SV] https://github.com/broadinstitute/gatk-sv
+   * [GATK-SV](https://github.com/broadinstitute/gatk-sv)
    * SAIGE
    * ...
 4. Test each of the tools from the previous set
