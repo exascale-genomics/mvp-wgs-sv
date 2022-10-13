@@ -33,6 +33,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
    * ...
 4. Test each of the tools from the previous set
    * NVIDIA Clara-Parabricks - Succesfully ran workflow on low coverage and 30X whole-genome fastq sequences [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/parabricks_readme.md)]
+   * SVision - Build tool and test on 30X whole-genome BAM file [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/svision_readme.md)].
 6. Evaluate outputs - Determine which set of tools are best for our analysis, but be dynamic enough that if new tools come up, we can shift focus.
 7. Create/test submission engine (i.e. Parsl, Balsam, etc)
    * Look [here](https://www.alcf.anl.gov/files/uram_workflows_performanceworkshop2018.pdf)
