@@ -23,7 +23,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 3. Gather a set of NGS and PheWAS/GWAS tools that will be tested on Polaris. Each tool will most likely encounter its own issues and will have to deal with it appropriately.
    * NVIDIA Clara-Parabricks - Create Singularity container [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/parabricks_readme.md)]
    * [DeepVariant](https://ai.googleblog.com/search/label/Google%20Genomics) - included within parabricks
-   * [SVision](https://github.com/xjtu-omics/SVision)
+   * [SVision](https://github.com/xjtu-omics/SVision) - This tool is meant to be used with long read sequencers (i.e. PacBio, OxfordNanopore).
    * [AstraZeneca tools](https://github.com/AstraZeneca)
    * [GATK-sv](https://github.com/broadinstitute/gatk-sv)
    * [DeepSV](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3299-y)
