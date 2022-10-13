@@ -1,8 +1,8 @@
 # SVision
 
-[SVision](https://github.com/xjtu-omics/SVision) is a deep learning-based structural variants caller that takes aligned reads or contigs as input. Especially, SVision implements a targeted multi-objects recognition framework, detecting and characterizing both simple and complex structural variants from three-channel similarity images.
+[SVision](https://github.com/xjtu-omics/SVision) is a deep learning-based structural variants caller that takes aligned reads or contigs as input. Specially, SVision implements a targeted multi-objects recognition framework, detecting and characterizing both simple and complex structural variants from three-channel similarity images.
 
-This file shows how SVision was installed on Polaris and characteristics of the run on Polaris.
+This file shows how SVision was installed on Polaris and characteristics of the run on Polaris. We will be downloading the models from the SVision repository and will use them to predict SVs on our data. We will not be building any models. HiFi sequence data is needed for building the models.
 
 ```
 # build SVision on Polaris
