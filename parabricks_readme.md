@@ -8,6 +8,8 @@ First we will try [NVIDIA Clara-Parabricks](https://catalog.ngc.nvidia.com/orgs/
 The container is distributed via Docker and unfortunately Polaris does not allow usage of Docker. In order to use Parabricks within Polaris we must first create a Singularity container:
 ```
 $module load singularity/3.8.7
+$mkdir -p /lus/grand/projects/covid-ct/arodriguez/tools/singularity
+$cd /lus/grand/projects/covid-ct/arodriguez/tools/singularity
 $singularity  build parabricks-4.0 docker://nvcr.io/nvidia/clara/clara-parabricks:4.0.0-1
 INFO:    Starting build...
 Getting image source signatures
@@ -145,10 +147,10 @@ qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q
 module load singularity/3.8.7
 
 # convert from CRAM to fq
-singularity run --nv  ./parabricks-4.0 pbrun bam2fq --in-bam /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/30x_cov/HG00138.final.cram  --out-prefix /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/30x_cov/HG00138_30x_2.fastq --ref  /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/GRCh38_CRAM/GRCh38_full_analysis_set_plus_decoy_hla.fa
+singularity run --nv  /lus/grand/projects/covid-ct/arodriguez/tools/singularity/parabricks-4.0 pbrun bam2fq --in-bam /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/30x_cov/HG00138.final.cram  --out-prefix /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/30x_cov/HG00138_30x_2.fastq --ref  /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/GRCh38_CRAM/GRCh38_full_analysis_set_plus_decoy_hla.fa
 
 # run the deepvariant-germline workflow using the low-coverage sequences
-singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/GRCh38_CRAM/GRCh38_full_analysis_set_plus_decoy_hla.fa  --in-fq /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/30x_cov/HG00138_30x_2.fastq_1.fastq.gz /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/30x_cov/HG00138_30x_2.fastq_2.fastq.gz --out-bam  /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/HG00138.bam --out-variants  /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/HG00138.vcf
+singularity run --nv  /lus/grand/projects/covid-ct/arodriguez/tools/singularity/parabricks-4.0 pbrun deepvariant_germline  --ref /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/GRCh38_CRAM/GRCh38_full_analysis_set_plus_decoy_hla.fa  --in-fq /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/30x_cov/HG00138_30x_2.fastq_1.fastq.gz /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/30x_cov/HG00138_30x_2.fastq_2.fastq.gz --out-bam  /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/HG00138.bam --out-variants  /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/HG00138.vcf
 
 ```
 
