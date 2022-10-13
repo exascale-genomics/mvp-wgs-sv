@@ -13,8 +13,8 @@
 # We will do quick tests using the low coverage data and perform a final test on the 30x data.
 # We will need to convert from CRAM files to fastq files for our testing.
 
-mkdir -p ~/wgs_test/HG00138
-cd ~/wgs_test/HG00138
+mkdir -p /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138
+cd /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138
 mkdir ./low_cov
 mkdir ./30x_cov
 cd ./low_cov
@@ -28,8 +28,8 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR324/ERR3240144/HG00138.final.cram
 
 ## install additional tools for index making
 # bwa
-mkdir -p ~/wgs_test/tools/bwa
-cd ~/wgs_test/tools/bwa
+mkdir -p /lus/grand/projects/covid-ct/arodriguez/wgs_test/tools/bwa
+cd /lus/grand/projects/covid-ct/arodriguez/wgs_test/tools/bwa
 git clone https://github.com/lh3/bwa.git
 cd bwa; make
 
@@ -39,40 +39,40 @@ bunzip2 samtools-1.16.1.tar.bz2
 tar xvf samtools-1.16.1.tar
 cd samtools-1.16.1/
 ## configure without htslib as it needs libbzip2 which I cannot find. This will only install samtools
-./configure --disable-bz2 --prefix=/home/arodriguez/wgs_test/tools/samtools/samtools-1.16.1/
+./configure --disable-bz2 --prefix=/lus/grand/projects/covid-ct/arodriguez/wgs_test/tools/samtools/samtools-1.16.1/
 make
 make install
 
 # create indexed files
 # Also download the reference hg38 file which we will align to:
-mkdir -p ~/wgs_test/reference/hg38
-cd ~/wgs_test/reference/hg38
+mkdir -p /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/hg38
+cd /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/hg38
 wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
 ## Unzip and index the reference
 gunzip GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
 
 # Also for the CRAM file
-mkdir -p ~/wgs_test/reference/GRCh38_CRAM
-cd ~/wgs_test/reference/GRCh38_CRAM
+mkdir -p /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/GRCh38_CRAM
+cd /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/GRCh38_CRAM
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa
 
 ## Create an FAI index
-cd ~/wgs_test/reference/hg38
-~/wgs_test/tools/samtools/samtools-1.16.1/bin/samtools faidx GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+cd /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/hg38
+/lus/grand/projects/covid-ct/arodriguez/wgs_test/tools/samtools/samtools-1.16.1/bin/samtools faidx GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 
-cd ~/wgs_test/reference/GRCh38_CRAM
-~/wgs_test/tools/samtools/samtools-1.16.1/bin/samtools faidx GRCh38_full_analysis_set_plus_decoy_hla.fa
+cd /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/GRCh38_CRAM
+/lus/grand/projects/covid-ct/arodriguez/wgs_test/tools/samtools/samtools-1.16.1/bin/samtools faidx GRCh38_full_analysis_set_plus_decoy_hla.fa
 
 ## Create the BWA indices
-cd ~/wgs_test/reference/hg38
-~/wgs_test/tools/bwa/bwa/bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+cd /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/hg38
+/lus/grand/projects/covid-ct/arodriguez/wgs_test/tools/bwa/bwa/bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 
-cd ~/wgs_test/reference/GRCh38_CRAM
-~/wgs_test/tools/bwa/bwa/bwa index GRCh38_full_analysis_set_plus_decoy_hla.fa
+cd /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/GRCh38_CRAM
+/lus/grand/projects/covid-ct/arodriguez/wgs_test/tools/bwa/bwa/bwa index GRCh38_full_analysis_set_plus_decoy_hla.fa
 
 # run Parabricks
 qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q debug
 module load singularity
-singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref ~/wgs_test/reference/hg38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna  --in-fq ~/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz ~/wgs_test/HG00138/low_cov/ERR016162_2.fastq.gz --out-variants ~/wgs_test/HG00138/output/low_cov --out-bam  ~/wgs_test/HG00138/output/low_cov/HG00138.bam --out-variants ~/wgs_test/HG00138/output/low_cov/HG00138.vcf
+singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/hg38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna  --in-fq /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/low_cov/ERR016162_2.fastq.gz --out-variants /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/low_cov --out-bam  /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/low_cov/HG00138.bam --out-variants /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/low_cov/HG00138.vcf
 
 
