@@ -105,3 +105,16 @@ Hash table parameters:
 
 #####
 ```
+
+We will now be able to submit the SVision job on the 30X HG00138 sample BAM file that was generated with Parabricks:
+
+```
+qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q debug
+
+module load conda/2022-09-08
+conda activate svisionenv
+
+# modify the command line
+/lus/grand/projects/covid-ct/arodriguez/tools/svision/SVision/SVision -o ./home/user/svision_out -b ./supports/HG00733.svision.demo.bam -m /home/user/svision_model/svision-cnn-model.ckpt -g /path/to/reference.fa -n HG00733 -s 5 --graph --qname
+
+```
