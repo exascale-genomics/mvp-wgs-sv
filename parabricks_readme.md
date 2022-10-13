@@ -117,7 +117,7 @@ qsub -A covid-ct -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q
 module load singularity/3.8.7
 
 # run the deepvariant-germline workflow using the low-coverage sequences
-singularity run --nv  ./parabricks-4.0 pbrun deepvariant_germline  --ref /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/hg38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna  --in-fq /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/low_cov/ERR016162_2.fastq.gz --out-variants /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/low_cov --out-bam  /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/low_cov/HG00138.bam --out-variants /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/low_cov/HG00138.vcf
+singularity run --nv  /lus/grand/projects/covid-ct/arodriguez/tools/singularity/parabricks-4.0 pbrun deepvariant_germline  --ref /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/hg38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna  --in-fq /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/low_cov/ERR016162_1.fastq.gz /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/low_cov/ERR016162_2.fastq.gz --out-variants /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/low_cov --out-bam  /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/low_cov/HG00138.bam --out-variants /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/low_cov/HG00138.vcf
 
 ```
 
