@@ -163,8 +163,8 @@ Below are the execution times:
 | Tools | Description | Version | Execution Time (seconds) | GPU Usage |
 | :-: | :-----: |  :-----: | :-----: |  :-----: |
 |  Parabricks accelerated Genomics Pipeline | bam2fq    |  4.0.0-1 | 1015 |  X |
-|  Parabricks accelerated Genomics Pipeline | BWA-mem Sorting Phase-I    |  4.0.0-1 | - |  X |
-|  Parabricks accelerated Genomics Pipeline | Sorting Phase-II   |  4.0.0-1 | - |  X |
-|  Parabricks accelerated Genomics Pipeline |  Marking Duplicates, BQSR   |  4.0.0-1 | - |  X |
-|  Parabricks accelerated Genomics Pipeline |  deepvariant   |  4.0.0-1 | - |  X |
-| |  |  <b>Total</b> | <b>- seconds = - minutes</b> |   |
+|  Parabricks accelerated Genomics Pipeline | BWA-mem Sorting Phase-I    |  4.0.0-1 | 1689 |  X |
+|  Parabricks accelerated Genomics Pipeline | Sorting Phase-II   |  4.0.0-1 | 50 |  X |
+|  Parabricks accelerated Genomics Pipeline |  Marking Duplicates, BQSR   |  4.0.0-1 | 100 |  X |
+|  Parabricks accelerated Genomics Pipeline |  deepvariant   |  4.0.0-1 | 1094 |  X |
+| |  |  <b>Total</b> | <b>3948 seconds = 66 minutes</b> |   |
