@@ -104,6 +104,15 @@ Hash table parameters:
                         realignment (default: 1000)
 
 #####
+
+# you will manually have to download the model files from https://drive.google.com/drive/folders/1j74IN6kPKEx9hy3aENx3zHYPUnyYWGvj
+# download to your computer and then transfer to polaris
+# files:
+# $ls /lus/grand/projects/covid-ct/arodriguez/tools/svision/SVision/models
+# -rw-r--r--  1 arodri7     9420131 Oct 13 17:22 svision-cnn-model.ckpt.meta
+# -rw-r--r--  1 arodri7         713 Oct 14 10:27 svision-cnn-model.ckpt.index
+# -rw-r--r--  1 arodri7   227554836 Oct 14 10:27 svision-cnn-model.ckpt.data-00000-of-00001
+
 ```
 
 We will now be able to submit the SVision job on the 30X HG00138 sample BAM file that was generated with Parabricks:
