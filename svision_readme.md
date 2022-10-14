@@ -124,6 +124,7 @@ module load conda/2022-09-08
 conda activate svisionenv
 
 # modify the command line
-/lus/grand/projects/covid-ct/arodriguez/tools/svision/SVision/SVision -o ./home/user/svision_out -b ./supports/HG00733.svision.demo.bam -m /home/user/svision_model/svision-cnn-model.ckpt -g /path/to/reference.fa -n HG00733 -s 5 --graph --qname
+mkdir /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/svision_out
+/lus/grand/projects/covid-ct/arodriguez/tools/svision/SVision/SVision -o /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/svision_out -b /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/HG00138.bam -m /lus/grand/projects/covid-ct/arodriguez/tools/svision/SVision/models/svision-cnn-model.ckpt -g /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/GRCh38_CRAM/GRCh38_full_analysis_set_plus_decoy_hla.fa -n HG00138 -s 5 --graph --qname
 
 ```
