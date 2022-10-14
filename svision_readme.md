@@ -125,6 +125,7 @@ conda activate svisionenv
 
 # modify the command line
 mkdir /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/svision_out
-/lus/grand/projects/covid-ct/arodriguez/tools/svision/SVision/SVision -o /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/svision_out -b /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/HG00138.bam -m /lus/grand/projects/covid-ct/arodriguez/tools/svision/SVision/models/svision-cnn-model.ckpt -g /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/GRCh38_CRAM/GRCh38_full_analysis_set_plus_decoy_hla.fa -n HG00138 -s 5 --graph --qname
+cd /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/svision_out
+SVision -o /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/svision_out -b /lus/grand/projects/covid-ct/arodriguez/wgs_test/HG00138/output/30x/HG00138.bam -m /lus/grand/projects/covid-ct/arodriguez/tools/svision/SVision/models/svision-cnn-model.ckpt -g /lus/grand/projects/covid-ct/arodriguez/wgs_test/reference/GRCh38_CRAM/GRCh38_full_analysis_set_plus_decoy_hla.fa -n HG00138 -s 5 --graph --qname
 
 ```
