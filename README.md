@@ -29,6 +29,19 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
    * [DeepSV](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3299-y)
    * [MANTA](https://github.com/Illumina/manta) - consider modifications made [here](https://www.nature.com/articles/s41525-021-00267-9)
    * [DeepSVFilter](https://github.com/yongzhuang/DeepSVFilter) - Tool used to filter SV calls from other SV callers (i.e. Delly, Lumpy, Manta)
+   * [Cue](https://www.broadinstitute.org/talks/cue-framework-cross-platform-structural-variant-calling-and-genotyping-deep-learning)
+   * [Delly]()
+   * [svtools]()
+   * [Absynthe]()
+   * [Breakdancer]()
+   * [BreakSeq]()
+   * [CNVNator]()
+   * [Lumpy]()
+   * [Manta]()
+   * [Tardis]()
+   * [Whaning]()
+   * [PAV](https://github.com/EichlerLab/pav)
+   * [ConsensusSV](https://github.com/MateuszChilinski/ConsensuSV)
    * SAIGE
    * ...
 4. Test each of the tools from the previous set
