@@ -21,31 +21,37 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
    * [1KG Whole genome datasets](https://www.cell.com/cell/fulltext/S0092-8674(22)00991-6) 
    * Reference [hg38](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz)
 3. Gather a set of NGS and PheWAS/GWAS tools that will be tested on Polaris. Each tool will most likely encounter its own issues and will have to deal with it appropriately.
-   * NVIDIA Clara-Parabricks - Create Singularity container [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/parabricks_readme.md)]
-   * [DeepVariant](https://ai.googleblog.com/search/label/Google%20Genomics) - included within parabricks
-   * [SVision](https://github.com/xjtu-omics/SVision) - This tool is meant to be used with long read sequencers (i.e. PacBio, OxfordNanopore) for building the models which they already provide. We can test with the BAM file we generate from Parabricks.
-   * [AstraZeneca tools](https://github.com/AstraZeneca)
-   * [GATK-sv](https://github.com/broadinstitute/gatk-sv)
-   * [DeepSV](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3299-y)
-   * [MANTA](https://github.com/Illumina/manta) - consider modifications made [here](https://www.nature.com/articles/s41525-021-00267-9)
-   * [DeepSVFilter](https://github.com/yongzhuang/DeepSVFilter) - Tool used to filter SV calls from other SV callers (i.e. Delly, Lumpy, Manta)
-   * [Cue](https://www.broadinstitute.org/talks/cue-framework-cross-platform-structural-variant-calling-and-genotyping-deep-learning)
-   * [Delly]()
-   * [svtools]()
-   * [Absynthe]()
-   * [Breakdancer]()
-   * [BreakSeq]()
-   * [CNVNator]()
-   * [Lumpy]()
-   * [Manta]()
-   * [Smoove]()
-   * [Tardis]()
-   * [Whaning]()
-   * [Graphtyper]()
-   * [PAV](https://github.com/EichlerLab/pav)
-   * [ConsensusSV](https://github.com/MateuszChilinski/ConsensuSV)
-   * SAIGE
-   * Annotate with [VEP]()
+  * Alignment
+    * NVIDIA Clara-Parabricks - Create Singularity container [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/parabricks_readme.md)]
+  * SNP Callers
+    * [DeepVariant](https://ai.googleblog.com/search/label/Google%20Genomics) - included within parabricks
+    * [GATK HaplotypeCaller]() - included with parabricks
+  * SV Callers
+    * [SVision](https://github.com/xjtu-omics/SVision) - This tool is meant to be used with long read sequencers (i.e. PacBio, OxfordNanopore) for building the models which they already provide. We can test with the BAM file we generate from Parabricks.
+    * [AstraZeneca tools](https://github.com/AstraZeneca)
+    * [GATK-sv](https://github.com/broadinstitute/gatk-sv)
+    * [DeepSV](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3299-y)
+    * [MANTA](https://github.com/Illumina/manta) - consider modifications made [here](https://www.nature.com/articles/s41525-021-00267-9)
+    * [DeepSVFilter](https://github.com/yongzhuang/DeepSVFilter) - Tool used to filter SV calls from other SV callers (i.e. Delly, Lumpy, Manta)
+    * [Cue](https://www.broadinstitute.org/talks/cue-framework-cross-platform-structural-variant-calling-and-genotyping-deep-learning)
+    * [Delly]()
+    * [svtools]()
+    * [Absynthe]()
+    * [Breakdancer]()
+    * [BreakSeq]()
+    * [CNVNator]()
+    * [Lumpy]()
+    * [Manta]()
+    * [Smoove]()
+    * [Tardis]()
+    * [Whaning]()
+    * [Graphtyper]()
+    * [PAV](https://github.com/EichlerLab/pav)
+    * [ConsensusSV](https://github.com/MateuszChilinski/ConsensuSV)
+  * Annotations
+    * Annotate with [VEP]()
+  * Population analysis
+    * SAIGE
 4. Test each of the tools from the previous set
    * NVIDIA Clara-Parabricks - Succesfully ran workflow on low coverage and 30X whole-genome fastq sequences [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/parabricks_readme.md)]
    * SVision - Build tool and test on 30X whole-genome BAM file [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/svision_readme.md)].
