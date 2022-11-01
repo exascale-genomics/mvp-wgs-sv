@@ -38,8 +38,10 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
    * [CNVNator]()
    * [Lumpy]()
    * [Manta]()
+   * [Smoove]()
    * [Tardis]()
    * [Whaning]()
+   * [Graphtyper]()
    * [PAV](https://github.com/EichlerLab/pav)
    * [ConsensusSV](https://github.com/MateuszChilinski/ConsensuSV)
    * SAIGE
