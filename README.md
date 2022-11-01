@@ -5,6 +5,8 @@ In the past the VA was able to perform mapping and SNP calling using the [Trelli
 Performing analysis on the whole genome sequences can be very computational and time intensive. We would like to use ALCF's Polaris machine to perform the workflows for NGS sequence analysis.
 We will have the opportunity to perform a population analysis so we can conclude with a Phewas analysis on the results from the whole genome analysis.
 
+Take a look at what the Broad folks are doing [here](https://www.sciencedirect.com/science/article/pii/S0092867422009916?via%3Dihub). They are calling whole genomes using the Broad workflow and SV calling is being done in a consensus manner.
+
 Below is a draft of what steps are needed to achieve the goals on this project. Please modify appropriately.
 
 1. Get familiar with Polaris
