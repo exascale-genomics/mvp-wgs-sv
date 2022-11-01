@@ -22,7 +22,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
    * Reference [hg38](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz)
 3. Gather a set of NGS and PheWAS/GWAS tools that will be tested on Polaris. Each tool will most likely encounter its own issues and will have to deal with it appropriately.
   * Alignment
-    * NVIDIA Clara-Parabricks - Create Singularity container [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/parabricks_readme.md)]
+    * [NVIDIA Clara-Parabricks](https://www.nvidia.com/en-us/clara/genomics/)
   * SNP Callers
     * [DeepVariant](https://ai.googleblog.com/search/label/Google%20Genomics) - included within parabricks
     * [GATK HaplotypeCaller]() - included with parabricks
