@@ -85,6 +85,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 | [BreakSeq](https://github.com/bioinform/breakseq2)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | Python | N | 
 | [CREST](https://www.stjude.org/research/labs/zhang-lab/crest.html)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | Perl | N | 
 | [DELLY](https://github.com/dellytools/delly)  | Deletions, inversions, duplications, <br /> interchromosomal translocations  |  Y | C++ | N | 
+| [GRIDSS](https://github.com/PapenfussLab/gridss)  | Insertions, deletions, translocations, inversions, duplications  |  N | Java/R | N | 
 
 
 ## References
