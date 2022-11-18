@@ -80,9 +80,9 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 
 
 | Caller  | Types of SVs | GitHub | Active development | Programming Env | GPU acceleration|
-| ------------- | ------------- |----|-----|------|
-| Breakdancer  | Deletions, insertions, inversions, <br /> intra-chromosomal and inter-chromosomal translocations  | ph | ph | ph | ph |
-| BreakSeq  | Insertions, deletions, translocations, <br /> inversions, duplications  | ph | ph | ph| ph|
+| ------------- | ------------- |
+| Breakdancer  | Deletions, insertions, inversions, <br /> intra-chromosomal and inter-chromosomal translocations  | 
+| BreakSeq  | Insertions, deletions, translocations, <br /> inversions, duplications  | 
 
 
 ## References
