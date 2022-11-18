@@ -83,6 +83,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 | ------------- | ------------- | ------------- | ---------------| ------------------|
 | [Breakdancer](https://github.com/genome/breakdancer)  | Deletions, insertions, inversions, <br /> intra-chromosomal and <br /> inter-chromosomal translocations  | N | C++| N |
 | [BreakSeq](https://github.com/bioinform/breakseq2)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | Python | N | 
+| [CREST](https://www.stjude.org/research/labs/zhang-lab/crest.html)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | Perl | N | 
 
 
 ## References
