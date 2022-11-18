@@ -79,10 +79,10 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 ## Summary of SV callers
 
 
-| Caller  | Types of SVs | GitHub | Actively developed? |
+| Caller  | Types of SVs | GitHub | Actively developed? | Programming Env | 
 | ------------- | ------------- | ------------- | -------------|
-| Breakdancer  | Deletions, insertions, inversions, <br /> intra-chromosomal and inter-chromosomal translocations  | <https://github.com/genome/breakdancer> | N |
-| BreakSeq  | Insertions, deletions, translocations, <br /> inversions, duplications  | <https://github.com/bioinform/breakseq2> | N |
+| Breakdancer  | Deletions, insertions, inversions, <br /> intra-chromosomal and inter-chromosomal translocations  | <https://github.com/genome/breakdancer> | N | C++|
+| BreakSeq  | Insertions, deletions, translocations, <br /> inversions, duplications  | <https://github.com/bioinform/breakseq2> | N | Python | 
 
 
 ## References
