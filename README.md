@@ -81,8 +81,8 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 
 | Caller  | Types of SVs |
 | ------------- | ------------- |
-| Breakdancer  | Deletions, insertions, inversions, intra-chromosomal and inter-chromosomal translocations  |
-| BreakSeq  | Insertions, deletions, translocations, inversions, duplications  | 
+| Breakdancer  | Deletions, insertions, inversions, <br /> intra-chromosomal and inter-chromosomal translocations  |
+| BreakSeq  | Insertions, deletions, translocations, <br /> inversions, duplications  | 
 
 
 ## References
