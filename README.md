@@ -76,6 +76,8 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 21. Share data
 22. <b>Write paper on findings</b>
 
+## Summary of SV callers
+
 
 ## References
 This is what others are doing:
