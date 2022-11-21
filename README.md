@@ -79,7 +79,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 ## Summary of SV callers
 
 
-| Caller/web link  | Types of SVs | AI based | Actively developed? | Prg Env | GPU acceleration? | 
+| Caller/web link  | Types of SVs | AI based? | Actively developed? | Prg Env | GPU acceleration? | 
 | ------------- | ------------- | ------------- | ---------------| ------------------|-----------------------------|
 | [Breakdancer](https://github.com/genome/breakdancer)  | Deletions, insertions, inversions, <br /> intra-chromosomal, <br /> inter-chromosomal translocations  | N | N | C++| N |
 | [BreakSeq](https://github.com/bioinform/breakseq2)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | N | Python | N | 
