@@ -86,6 +86,15 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 | [CREST](https://www.stjude.org/research/labs/zhang-lab/crest.html)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | Perl | N | 
 | [DELLY](https://github.com/dellytools/delly)  | Deletions, inversions, duplications, <br /> interchromosomal translocations  |  Y | C++ | N | 
 | [GRIDSS](https://github.com/PapenfussLab/gridss)  | Insertions, deletions, translocations, inversions, duplications  |  N | Java/R | N | 
+| [Gustaf](https://github.com/seqan/seqan/tree/master/apps/gustaf)  | Deletions, inversions, duplications, translocation  |  N | C++ | N | 
+| [LUMPY](https://github.com/arq5x/lumpy-sv)  | Deletions, duplications, inversions, translocations  |  Y (June 2022) | C++ | N | 
+| [Manta](https://github.com/Illumina/manta)  | Insertions, deletions, translocations, inversions, duplications  |  N | C++ | N | 
+| [Meerkat](http://compbio.med.harvard.edu/Meerkat/meerkat_download_page.php)  |  Insertions, deletions, translocations, inversions, duplications  |  N | Perl | N | 
+| [Pindel](https://github.com/genome/pindel)  | Insertions, deletions, translocations, inversions, duplications  |  N | C++ | N | 
+| [TARDIS](https://github.com/BilkentCompGen/tardis)  | Tandem and interspersed segmental duplications  |  N | C | N | 
+| [TIGRA](https://bitbucket.org/xianfan/tigra/src/master/)  | Insertions and deletions  |  N | C++ | N | 
+| [Ulysses](https://github.com/gillet/ulysses)  |  Insertions, deletions, translocations, inversions, duplications  |  N | Python/R | N | 
+| [SvABA](https://github.com/walaj/svaba)  |  Insertion, deletions, somatic rearrangments  |  N | C++/R | N | 
 
 
 ## References
