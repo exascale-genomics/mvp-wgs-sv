@@ -81,7 +81,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 
 | Caller/web link  | Types of SVs | AI based | Actively developed? | Prg Env | GPU acceleration? | 
 | ------------- | ------------- | ------------- | ---------------| ------------------|-----------------------------|
-| [Breakdancer](https://github.com/genome/breakdancer)  | Deletions, insertions, inversions, <br /> intra-chromosomal and <br /> inter-chromosomal translocations  | N | N | C++| N |
+| [Breakdancer](https://github.com/genome/breakdancer)  | Deletions, insertions, inversions, <br /> intra-chromosomal, <br /> inter-chromosomal translocations  | N | N | C++| N |
 | [BreakSeq](https://github.com/bioinform/breakseq2)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | N | Python | N | 
 | [CREST](https://www.stjude.org/research/labs/zhang-lab/crest.html)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | N | Perl | N | 
 | [DELLY](https://github.com/dellytools/delly)  | Deletions, inversions, duplications, <br /> interchromosomal translocations  |  N | Y | C++ | N | 
@@ -95,6 +95,8 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 | [TIGRA](https://bitbucket.org/xianfan/tigra/src/master/)  | Insertions and deletions  |  N | N | C++ | N | 
 | [Ulysses](https://github.com/gillet/ulysses)  |  Insertions, deletions, translocations, inversions, duplications  |  N | N | Python/R | N | 
 | [SvABA](https://github.com/walaj/svaba)  |  Insertion, deletions, somatic rearrangments  |  N | N | C++/R | N | 
+| [Cue](https://github.com/PopicLab/cue)  |  Deletions, tandem duplication, inversions, deletion-flanked inversions, inverted duplications larger than 5kbp  |  Y | Y | Python | Y | 
+| [Strvctvre](https://github.com/andrewSharo/StrVCTVRE)  |  han 5kbp  |  Y | Y | Python | Y | 
 
 
 ## References
