@@ -95,9 +95,13 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 | [TIGRA](https://bitbucket.org/xianfan/tigra/src/master/)  | Insertions and deletions  |  N | N | C++ | N | 
 | [Ulysses](https://github.com/gillet/ulysses)  |  Insertions, deletions, translocations, inversions, duplications  |  N | N | Python/R | N | 
 | [SvABA](https://github.com/walaj/svaba)  |  Insertion, deletions, somatic rearrangments  |  N | N | C++/R | N | 
+| [Socrates](https://github.com/PapenfussLab/socrates)  |    |  N | N | Java | N | 
+| [SVSeq2](https://sites.google.com/site/jinzhangwebsite/svseq2)  |    |  N | N | - | N | 
 | [Cue](https://github.com/PopicLab/cue)  |  Deletions, tandem duplication, inversions, deletion-flanked inversions, inverted duplications larger than 5kbp  |  Y | Y | Python | Y | 
-| [Strvctvre](https://github.com/andrewSharo/StrVCTVRE)  |    |  Y | Y | Python | Y | 
-| [Dysgu](https://github.com/andrewSharo/StrVCTVRE)  |    |  Y | Y | Python | Y | 
+| [Strvctvre](https://github.com/andrewSharo/StrVCTVRE)  | Deletions and duplications   |  Y | N | Python | - | 
+| [Dysgu](https://github.com/kcleal/dysgu)  |    |  Y | Y | Python | - | 
+| [CNNgeno](https://github.com/BRF123/Cnngeno)  | Deletions   |  Y | N | Python | Y | 
+| [DeepSV](https://github.com/CSuperlei/DeepSV)  | Deletions   |  Y | N | Python | Y | 
 
 
 ## References
