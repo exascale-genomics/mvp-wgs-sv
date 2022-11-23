@@ -1,4 +1,4 @@
-# Project Plan for MVP Whole Genome Structural Variant and PheWAS Analysis on Polaris
+# Overall Plan for MVP Whole Genome Structural Variant and PheWAS Analysis on Polaris
 
 We will have access to approximately 10,000 whole genome sequences from the MVP community.
 In the past the VA was able to perform mapping and SNP calling using the [Trellis](https://www.nature.com/articles/s41598-021-02569-5) platform. However, SV calling can be expensive to perform.
