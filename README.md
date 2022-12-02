@@ -81,7 +81,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 
 | Caller/web link  | Types of SVs | AI based? | Actively developed? | Prg Env | GPU acceleration? | 
 | ------------- | ------------- | ------------- | ---------------| ------------------|-----------------------------|
-| [Breakdancer](https://github.com/genome/breakdancer)  | Deletions, insertions, inversions, <br /> intra-chromosomal, <br /> inter-chromosomal translocations  | N | N | C++| N |
+| [Breakdancer]<sup>\*</sup>(https://github.com/genome/breakdancer)  | Deletions, insertions, inversions, <br /> intra-chromosomal, <br /> inter-chromosomal translocations  | N | N | C++| N |
 | [BreakSeq](https://github.com/bioinform/breakseq2)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | N | Python | N | 
 | [ClipCrop](https://github.com/shinout/clipcrop)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | N | Node.js | N | 
 | [CREST](https://www.stjude.org/research/labs/zhang-lab/crest.html)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | N | Perl | N | 
@@ -105,6 +105,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 | [DeepSV](https://github.com/CSuperlei/DeepSV)  | Deletions   |  Y | N | Python | Y | 
 | [sv-channels](https://github.com/GooglingTheCancerGenome/sv-channels)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  Y | N | Python | Y | 
 
+<sup>\*</sup> BreakDancer has two modes, BreakDancerMax and BreakDancerMini. While the former is for large SVs, the latter is designed for calling small indels (of 10-100 base pairs) using normally mapped read pairs.
 
 ## References
 This is what others are doing:
