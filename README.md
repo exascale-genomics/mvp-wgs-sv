@@ -48,6 +48,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
     * [Graphtyper]()
     * [PAV](https://github.com/EichlerLab/pav)
     * [ConsensusSV](https://github.com/MateuszChilinski/ConsensuSV)
+    * [Parliament2](https://github.com/dnanexus/parliament2)
   * Annotations
     * Annotate with [VEP]()
   * Population analysis
