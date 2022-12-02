@@ -83,6 +83,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 | ------------- | ------------- | ------------- | ---------------| ------------------|-----------------------------|
 | [Breakdancer](https://github.com/genome/breakdancer)  | Deletions, insertions, inversions, <br /> intra-chromosomal, <br /> inter-chromosomal translocations  | N | N | C++| N |
 | [BreakSeq](https://github.com/bioinform/breakseq2)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | N | Python | N | 
+| [ClipCrop](https://github.com/shinout/clipcrop)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | N | Node.js | N | 
 | [CREST](https://www.stjude.org/research/labs/zhang-lab/crest.html)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  N | N | Perl | N | 
 | [DELLY](https://github.com/dellytools/delly)  | Deletions, inversions, duplications, <br /> interchromosomal translocations  |  N | Y | C++ | N | 
 | [GRIDSS](https://github.com/PapenfussLab/gridss)  | Insertions, deletions, translocations, inversions, duplications  |  N | N | Java/R | N | 
