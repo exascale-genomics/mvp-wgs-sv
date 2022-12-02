@@ -1,7 +1,7 @@
-# Project Plan for MVP Whole Genome Structural Variant and PheWAS Analysis on Polaris
+# Overall Plan for MVP Whole Genome Structural Variant and PheWAS Analysis on Polaris and Frontier
 
-We will have access to approximately 10,000 whole genome sequences from the MVP community.
-In the past the VA was able to perform mapping and SNP calling using the [Trellis](https://www.nature.com/articles/s41598-021-02569-5) platform. However, SV calling can be expensive to perform.
+We will have access to approximately 10,000 whole genome sequences from the MVP project.
+In the past the VA was able to perform mapping and SNP calling using the [Trellis](https://www.nature.com/articles/s41598-021-02569-5) platform. However, SV calling at this scale has not been attempted before.
 Performing analysis on the whole genome sequences can be very computational and time intensive. We would like to use ALCF's Polaris machine to perform the workflows for NGS sequence analysis.
 We will have the opportunity to perform a population analysis so we can conclude with a Phewas analysis on the results from the whole genome analysis.
 
