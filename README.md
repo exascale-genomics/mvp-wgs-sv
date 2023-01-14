@@ -104,7 +104,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 | [Dysgu](https://github.com/kcleal/dysgu)  |    |  Y | Y | Python | - | 
 | [CNNgeno](https://github.com/BRF123/Cnngeno)  | Deletions   |  Y | N | Python | Y | 
 | [DeepSV](https://github.com/CSuperlei/DeepSV)  | Deletions   |  Y | N | Python | Y | 
-| [sv-channels](https://github.com/GooglingTheCancerGenome/sv-channels)  | Insertions, deletions, <br /> translocations, inversions, <br /> duplications  |  Y | N | Python/R | Y | 
+| [sv-channels](https://github.com/GooglingTheCancerGenome/sv-channels)  | Deletions  |  Y | Y | Python/R | Y | 
 
 <sup>\*</sup> BreakDancer has two modes, BreakDancerMax and BreakDancerMini. While the former is for large SVs, the latter is designed for calling small indels (of 10-100 base pairs) using normally mapped read pairs.
 
