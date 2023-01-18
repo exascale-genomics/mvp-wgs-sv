@@ -32,7 +32,13 @@ singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dn
 
 3. **Computation time**
 
-***Preprocessing***
+***Preprocessing*** (confirm the numbers)
+
+| Parabricks tool                | Time (mins)   |
+|----------------         -      |-------------  |
+| bam2fq                          | 56            |
+| fq2bam                          | 58            |
+
 
 ***SV calling***
 | Caller          	| Time (mins) 	|
