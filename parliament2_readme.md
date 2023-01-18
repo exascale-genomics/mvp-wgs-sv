@@ -48,3 +48,9 @@ singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dn
 | Breakseq        	| 14          	|
 | Delly_insertion 	| 99          	|
 | Delly_deletion  	| 171         	|
+
+
+## Running Parliament2 on synthetic genomes on Polaris with Parabricks assisted pre-processing
+
+1. **Generation of synthetic data**
+
