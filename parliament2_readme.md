@@ -1,4 +1,4 @@
-# Running Parliament2 on hg002 dataset on Polaris with Parabricks assisted pre-processing
+## Running Parliament2 on hg002 dataset on Polaris with Parabricks assisted pre-processing
 
 1. Download the bam (mapped on GRCh37), reference (GRCh37) and vcf files from GIAB server for HG002 (We use the GRCh37 as reference as the SV calls have been made using it as the reference and not GRCh38)\
 Link to bam file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_Illumina_2x250bps/novoalign_bams/ \
