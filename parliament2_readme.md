@@ -1,9 +1,9 @@
 ## Running Parliament2 on hg002 dataset on Polaris with Parabricks assisted pre-processing
 
-1. **Download files from GIAB site**
-Download the bam (mapped on GRCh37), reference (GRCh37) and vcf files from GIAB server for HG002 (We use the GRCh37 as reference as the SV calls have been made using it as the reference and not GRCh38)\
-Link to bam file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_Illumina_2x250bps/novoalign_bams/ \
-wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_Illumina_2x250bps/novoalign_bams/HG002.hs37d5.2x250.bam \
+1. **Download files from GIAB site**\n
+Download the bam (mapped on GRCh37), reference (GRCh37) and VCF files from GIAB server for hg002 (We use the GRCh37 as reference as the SV calls in GIAB v0.6 truth set have been made using it as the reference and not GRCh38)\
+Location to 60X bam file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_HiSeq_HG002_Homogeneity-10953946/NHGRI_Illumina300X_AJtrio_novoalign_bams/ \
+Download the file by using 'wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_HiSeq_HG002_Homogeneity-10953946/NHGRI_Illumina300X_AJtrio_novoalign_bams/HG002.GRCh38.60x.1.bam' \
 Link to reference file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/references/GRCh37/ \
 Link to VCF file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NIST_SV_v0.6/ \
 Link to sequence file: N/A \
