@@ -29,3 +29,13 @@ singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dn
                       [--delly_inversion] [--delly_duplication] [--genotype]
                       [--svviz] [--svviz_only_validated_candidates]
 
+3. **Computation time**
+
+| Caller          	| Time (mins) 	|
+|-----------------	|-------------	|
+| Manta           	| 46          	|
+| Lumpy           	| 18          	|
+| Breakdancer     	| 5           	|
+| Breakseq        	| 14          	|
+| Delly_insertion 	| 99          	|
+| Delly_deletion  	| 171         	|
