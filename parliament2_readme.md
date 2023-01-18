@@ -21,13 +21,14 @@ Link to VCF file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/relea
 \
 
 2. **Run Parliament2 SV callers** 
-
-\`singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dnanexus/out:rw -H /lus/grand/projects/covid-ct/tarak/SVCallers/parliament2_HG002/outputs parliament2_latest.sif  [-h] --bam BAM [--bai BAI] -r REF_GENOME [--fai FAI]
+```
+singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dnanexus/out:rw -H /lus/grand/projects/covid-ct/tarak/SVCallers/parliament2_HG002/outputs parliament2_latest.sif  [-h] --bam BAM [--bai BAI] -r REF_GENOME [--fai FAI]
                       [--prefix PREFIX] [--filter_short_contigs]
                       [--breakdancer] [--breakseq] [--manta] [--cnvnator]
                       [--lumpy] [--delly_deletion] [--delly_insertion]
                       [--delly_inversion] [--delly_duplication] [--genotype]
-                      [--svviz] [--svviz_only_validated_candidates]\`
+                      [--svviz] [--svviz_only_validated_candidates]
+```
 
 3. **Computation time**
 
