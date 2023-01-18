@@ -9,7 +9,7 @@ Download bam file by using ```wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceS
 Note: This bam file was not formatted properly for using directly as input to Parliament2. It was first converted to fastq read files using Parabricks *bam2fq* tool and then a new bam file was created using Parabricks *fq2bam* (add the commands)\
 \
 Location of reference file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/references/GRCh37/ \
-Download reference file using: 'wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz' \
+Download reference file using: ```wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz``` \
 \
 Link to VCF file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NIST_SV_v0.6/ 
 >Files in this directory include:
