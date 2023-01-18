@@ -32,6 +32,9 @@ singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dn
 
 3. **Computation time**
 
+***Preprocessing***
+
+***SV calling***
 | Caller          	| Time (mins) 	|
 |-----------------	|-------------	|
 | Manta           	| 46          	|
