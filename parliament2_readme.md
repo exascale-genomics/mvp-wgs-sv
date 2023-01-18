@@ -8,7 +8,7 @@ Download bam file by using 'wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSam
 Location of reference file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/references/GRCh37/ \
 Download reference file using: 'wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz' \
 \
-Link to VCF file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NIST_SV_v0.6/ \
+Link to VCF file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NIST_SV_v0.6/ 
 >Files in this directory include:
 >1. HG002_SVs_Tier1_v0.6.vcf.gz - the calls with PASS in the FILTER field are our highest confidence set of SVs >=50bp.
 >2. HG002_SVs_Tier1_v0.6.bed - this defines regions in which HG002_SVs_Tier1_v0.6.vcf.gz should contain close to 100 % of true insertions and deletions >=50bp.
@@ -17,6 +17,12 @@ Link to VCF file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/relea
 >5. HG002_SVs_Tier1_v0.6.2.bed - this defines regions in which HG002_SVs_Tier1_v0.6.vcf.gz should contain close to all of true insertions and deletions >=50bp. This is more conservative than HG002_SVs_Tier1_v0.6.bed in that it excludes the VDJ and X and Y.
 \
 
-2. Run Parliament2 SV callers \
-singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dnanexus/out:rw -H /lus/grand/projects/covid-ct/tarak/SVCallers/parliament2_HG002/outputs parliament2_latest.sif --bam HG002.hs37d5.2x250.bam --bai HG002.hs37d5.2x250.bam.bai -r hs37d5.fa --fai hs37d5.fa.fai --prefix lumpy_bd --lumpy --breakdancer 
+2. **Run Parliament2 SV callers** \n
+
+singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dnanexus/out:rw -H /lus/grand/projects/covid-ct/tarak/SVCallers/parliament2_HG002/outputs parliament2_latest.sif  [-h] --bam BAM [--bai BAI] -r REF_GENOME [--fai FAI]
+                      [--prefix PREFIX] [--filter_short_contigs]
+                      [--breakdancer] [--breakseq] [--manta] [--cnvnator]
+                      [--lumpy] [--delly_deletion] [--delly_insertion]
+                      [--delly_inversion] [--delly_duplication] [--genotype]
+                      [--svviz] [--svviz_only_validated_candidates]
 
