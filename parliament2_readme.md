@@ -55,7 +55,7 @@ singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dn
 | Delly_insertion 	| 99          	|
 | Delly_deletion  	| 171         	|
 
-
+Note: SV calling carried out using the Delly v1.1.6 singularity file (https://github.com/dellytools/delly/releases/) took 58 mins for SV calling, and 20 mins for annotation + genotyping
 ## Running Parliament2 on synthetic genomes on Polaris with Parabricks assisted pre-processing
 
 1. **Generation of synthetic data**
