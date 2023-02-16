@@ -6,6 +6,7 @@ Download the bam (mapped on GRCh37), reference (GRCh37) and VCF files from GIAB 
 \
 Location of 60X BAM file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_HiSeq_HG002_Homogeneity-10953946/NHGRI_Illumina300X_AJtrio_novoalign_bams/ \
 Download BAM file using ```wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_HiSeq_HG002_Homogeneity-10953946/NHGRI_Illumina300X_AJtrio_novoalign_bams/HG002.GRCh38.60x.1.bam``` \
+
 Note: This BAM file was not formatted properly for using directly as input to Parliament2. It was first converted to FASTQ read files using Parabricks *bam2fq* tool and the reads were converted to a new BAM file (hg002_60X_fq2bam.bam) using Parabricks *fq2bam*. To maintain consistency with the MVP dataset, this BAM file was downsampled by a factor of 2 to create a BAM file that corresponds to 30X data (samtools view -s 0.5 -b hg002_60X_fq2bam.bam > hg002_30X_fq2bam.bam) \
 \
 Location of reference file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/references/GRCh37/ \
