@@ -4,9 +4,9 @@
 
 Download the bam (mapped on GRCh37), reference (GRCh37) and VCF files from GIAB server for hg002 (We use the GRCh37 as reference as the SV calls in GIAB v0.6 truth set have been made using it as the reference and not GRCh38)\
 \
-Location of 60X bam file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_HiSeq_HG002_Homogeneity-10953946/NHGRI_Illumina300X_AJtrio_novoalign_bams/ \
-Download bam file by using ```wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_HiSeq_HG002_Homogeneity-10953946/NHGRI_Illumina300X_AJtrio_novoalign_bams/HG002.GRCh38.60x.1.bam``` \
-Note: This bam file was not formatted properly for using directly as input to Parliament2. It was first converted to fastq read files using Parabricks *bam2fq* tool and then a new bam file was created using Parabricks *fq2bam* (add the commands)\
+Location of 60X BAM file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_HiSeq_HG002_Homogeneity-10953946/NHGRI_Illumina300X_AJtrio_novoalign_bams/ \
+Download BAM file using ```wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_HiSeq_HG002_Homogeneity-10953946/NHGRI_Illumina300X_AJtrio_novoalign_bams/HG002.GRCh38.60x.1.bam``` \
+Note: This BAM file was not formatted properly for using directly as input to Parliament2. It was first converted to FASTQ read files using Parabricks *bam2fq* tool and the reads were converted to a new BAM file (hg002_60X_fq2bam.bam) using Parabricks *fq2bam*. To maintain consistency with the MVP dataset, this BAM file was downsampled by a factor of 2 to create a BAM file that corresponds to 30X data (samtools view -s 0.5 -b hg002_60X_fq2bam.bam > hg002_30X_fq2bam.bam) \
 \
 Location of reference file: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/references/GRCh37/ \
 Download reference file using: ```wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz``` \
@@ -38,7 +38,7 @@ singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dn
 
 3. **Computation time**
 
-***Preprocessing*** (confirm the numbers)
+***Preprocessing*** (Note: these figures correspond to 60X reads)
 
 | Parabricks tool 	| Time (mins) 	|
 |-----------------	|-------------	|
@@ -48,14 +48,17 @@ singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dn
 ***SV calling***
 | Caller          	| Time (mins) 	|
 |-----------------	|-------------	|
-| Manta           	| 46          	|
-| Lumpy           	| 18          	|
-| Breakdancer     	| 5           	|
-| Breakseq        	| 14          	|
-| Delly_insertion 	| 99          	|
-| Delly_deletion  	| 171         	|
+| Manta           	| 12          	|
+| Lumpy           	|           	|
+| Breakdancer     	| 3           	|
+| Breakseq        	| 7          	|
+| Delly_insertion 	| 16          	|
+| Delly_deletion  	| 25         	|
+| Delly_inversion  	| 14         	|
+| Delly_duplication  	| 13         	|
+| Combined(all above)  	| 55         	|
 
-Note: SV calling carried out using the Delly v1.1.6 singularity file (https://github.com/dellytools/delly/releases/) took 58 mins for SV calling, and 20 mins for annotation + genotyping
+#Note: SV calling carried out using the Delly v1.1.6 singularity file (https://github.com/dellytools/delly/releases/) took 58 mins for SV calling, and 20 mins for annotation + genotyping
 ## Running Parliament2 on synthetic genomes on Polaris with Parabricks assisted pre-processing
 
 1. **Generation of synthetic data**
