@@ -45,7 +45,7 @@ singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dn
 | bam2fq          	| 56          	|
 | fq2bam          	| 58          	|
 
-***SV calling***
+***SV calling*** (30X reads)
 | Caller          	| Time (mins) 	|
 |-----------------	|-------------	|
 | Manta           	| 12          	|
