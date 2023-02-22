@@ -50,7 +50,7 @@ singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dn
 | Caller          	| Time (mins) 	|
 |-----------------	|-------------	|
 | Manta           	| 12          	|
-| Lumpy           	|           	|
+| Lumpy           	| 14          	|
 | Breakdancer     	| 3           	|
 | Breakseq        	| 7          	|
 | Delly_insertion 	| 16          	|
@@ -59,7 +59,8 @@ singularity run -B \`pwd\`/input:/home/dnanexus/in:rw -B \`pwd\`/output:/home/dn
 | Delly_duplication  	| 13         	|
 | Combined(all above)  	| 55         	|
 
-#Note: SV calling carried out using the Delly v1.1.6 singularity file (https://github.com/dellytools/delly/releases/) took 58 mins for SV calling, and 20 mins for annotation + genotyping
+#Note 1: Parliament2 runs multiple SV callers in parallel when possible. So, the overall time when multiple callers are used simultaneously is different from the time calculated by adding the time required by each caller individually.
+#Note 2: All cases available at /lus/grand/projects/covid-ct/tarak/SVCallers/parliament2/timing_study_30X/ 
 ## Running Parliament2 on synthetic genomes on Polaris with Parabricks assisted pre-processing
 
 1. **Generation of synthetic data**
