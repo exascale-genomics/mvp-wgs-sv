@@ -70,6 +70,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 16. <b>Write paper on how VCFs were generated, what was found (computational and science?)</b>
 17. Setup SAIGE on Polaris
 18. Run SAIGE for MVP WG PGEN data
+    * [Use link](https://github.com/bambrozio/bioinformatics/blob/master/utils/1k-genomes-phenotype-simulator.ipynb) to create phenotypes
 19. Perform QC on SAIGE analysis
 20. Post-process analysis - Will need Anurag and Jenny for this
     * What is different compared to gwPhewas analysis?
