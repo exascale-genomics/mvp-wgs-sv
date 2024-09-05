@@ -1,14 +1,15 @@
 # Data Download for Testing
 #
-# We will download data from [1000 Genome Project](https://www.internationalgenome.org) to test our tools on the Polaris Supercomputer.
-# We will download 92 EUR samples [GBR](https://www.internationalgenome.org/data-portal/population/GBR) 
-#
-#      Population:           British
-#      Code:                 GBR
-#      Description:          British in England and Scotland
-#      Superpopulation:      European Ancestry
-#      Superpopulation code: EUR
-#
+We will download data from [1000 Genome Project](https://www.internationalgenome.org) to test our tools on the Polaris Supercomputer.
+We will download 92 EUR samples [GBR](https://www.internationalgenome.org/data-portal/population/GBR) 
+
+
+      Population:           British
+      Code:                 GBR
+      Description:          British in England and Scotland
+      Superpopulation:      European Ancestry
+      Superpopulation code: EUR
+
 # The project provides both low coverage and 30x coverage data files for each of the samples.
 # We will be working with 30x coverage files in CRAM format.
 # We will need to convert from CRAM files to fastq files for our testing.
