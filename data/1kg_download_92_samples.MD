@@ -31,6 +31,7 @@ for i in `cut -f1  30x-igsr-gbr-seqpaths.tsv`; do
   wget $i.crai; 
   cd /grand/projects/GeomicVar/rodriguez/1kg_proj/data/30x; 
 done
+
 ```
 
 Install additional tools for index making
