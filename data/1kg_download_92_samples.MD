@@ -34,28 +34,25 @@ Download the CRAM and CRAI files using `wget`
 
 Install additional tools for index making
 
-```
-mkdir -p /grand/projects/GeomicVar/rodriguez/1kg_proj/tools
+      mkdir -p /grand/projects/GeomicVar/rodriguez/1kg_proj/tools
+      # BWA
+      mkdir -p /grand/projects/GeomicVar/rodriguez/1kg_proj/tools/bwa
+      cd /grand/projects/GeomicVar/rodriguez/1kg_proj/tools/bwa
+      git clone https://github.com/lh3/bwa.git
+      cd bwa
+      make
 
-# BWA
-mkdir -p /grand/projects/GeomicVar/rodriguez/1kg_proj/tools/bwa
-cd /grand/projects/GeomicVar/rodriguez/1kg_proj/tools/bwa
-git clone https://github.com/lh3/bwa.git
-cd bwa
-make
-
-# samtools
-mkdir -p /grand/projects/GeomicVar/rodriguez/1kg_proj/tools/samtools
-cd samtools
-wget https://github.com/samtools/samtools/releases/download/1.16.1/samtools-1.16.1.tar.bz2
-bunzip2 samtools-1.16.1.tar.bz2
-tar xvf samtools-1.16.1.tar
-cd samtools-1.16.1/
-## configure without htslib as it needs libbzip2 which I cannot find. This will only install samtools
-./configure --disable-bz2 --prefix=/lus/grand/projects/covid-ct/arodriguez/wgs_test/tools/samtools/samtools-1.16.1/
-make
-make install
-```
+      # samtools
+      mkdir -p /grand/projects/GeomicVar/rodriguez/1kg_proj/tools/samtools
+      cd samtools
+      wget https://github.com/samtools/samtools/releases/download/1.16.1/samtools-1.16.1.tar.bz2
+      bunzip2 samtools-1.16.1.tar.bz2
+      tar xvf samtools-1.16.1.tar
+      cd samtools-1.16.1/
+      ## configure without htslib as it needs libbzip2 which I cannot find. This will only install samtools
+      ./configure --disable-bz2 --prefix=/lus/grand/projects/covid-ct/arodriguez/wgs_test/tools/samtools/samtools-1.16.1/
+      make
+      make install
 
 Create the indexed files and also download the reference hg38 file which we will align to:
 
