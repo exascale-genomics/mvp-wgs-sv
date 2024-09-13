@@ -7,7 +7,7 @@ We will install using Conda environment:
   module use /soft/modulefiles
   module load conda
 
-  hail_home=cd /grand/projects/GeomicVar/rodriguez/1kg_proj/data/tools/hail
+  hail_home=/grand/projects/GeomicVar/rodriguez/1kg_proj/data/tools/hail
   mkdir -p $hail_home
   cd $hail_home
 
