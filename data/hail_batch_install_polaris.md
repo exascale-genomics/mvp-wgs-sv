@@ -6,12 +6,13 @@ We will install using Conda environment:
 ```
   module use /soft/modulefiles
   module load conda
+  module load cray-python/3.11.5
 
   hail_home=/grand/projects/GeomicVar/rodriguez/1kg_proj/data/tools/hail
   mkdir -p $hail_home
   cd $hail_home
 
-  conda create -n hail python'>=3.9'
+  conda create -n hail
   conda activate hail
   pip install hail
 ```
