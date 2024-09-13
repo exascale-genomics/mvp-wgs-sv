@@ -46,7 +46,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 10. Convert VCF to PGENs for access to SAIGE
 11. Perform post-process analysis on VCFs (i.e QC, annotations, etc)
 12. <b>Write paper on how VCFs were generated, what was found (computational and science?)</b>
-13. Create simulated phenotype files for 1KG VCF results. [Use link](https://github.com/bambrozio/bioinformatics/blob/master/utils/1k-genomes-phenotype-simulator.ipynb) to create phenotypes
+13. Create simulated phenotype files for 1KG VCF results. [Use link](https://github.com/bambrozio/bioinformatics/blob/master/utils/1k-genomes-phenotype-simulator.ipynb) to create phenotypes. To use Hail for phenotype creation look [here](https://bioinformatics.stackexchange.com/questions/10731/simulating-phenotype-with-the-1000-genomes-project).
 13. Setup SAIGE on Polaris
 14. Setup Regenie on Polaris
 15. Run SAIGE for 1KG WG PGEN data
