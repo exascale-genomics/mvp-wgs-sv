@@ -46,12 +46,14 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 12. <b>Write paper on how VCFs were generated, what was found (computational and science?)</b>
 13. Create simulated phenotype files for 1KG VCF results. [Use link](https://github.com/bambrozio/bioinformatics/blob/master/utils/1k-genomes-phenotype-simulator.ipynb) to create phenotypes
 13. Setup SAIGE on Polaris
-14. Run SAIGE for 1KG WG PGEN data
-15. Perform QC on SAIGE analysis
-16. Package up the tools to perform same test on cloud.
-17. Compare cloud results with Polaris results
-18. Share data
-19. <b>Write paper on findings</b>
+14. Setup Regenie on Polaris
+15. Run SAIGE for 1KG WG PGEN data
+16. Run Regenie for 1KG WG PGEN data
+17. Perform QC on SAIGE analysis
+18. Package up the tools to perform same test on cloud.
+19. Compare cloud results with Polaris results
+20. Share data
+21. <b>Write paper on findings comparing different tools</b>
 
 
 ## References
