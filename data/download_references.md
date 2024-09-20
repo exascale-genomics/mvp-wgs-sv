@@ -23,6 +23,28 @@ Install tools for index making
       make
       make install
 
+      # bcftools
+      mkdir -p /grand/projects/GeomicVar/rodriguez/1kg_proj/tools/bcftools
+      cd bcftools
+      wget https://github.com/samtools/bcftools/releases/download/1.21/bcftools-1.21.tar.bz2
+      bunzip2 bcftools-1.21.tar.bz2
+      tar xvf bunzip2 bcftools-1.21.tar
+      cd bcftools-1.21
+      ## configure without htslib as it needs libbzip2 which I cannot find. This will only install samtools
+      ./configure --prefix=/grand/projects/GeomicVar/rodriguez/1kg_proj/data/tools/bcftools/bcftools-1.21
+      make
+      make install
+
+      # bgen
+      module load cray-python/3.11.5
+      mkdir -p /grand/projects/GeomicVar/rodriguez/1kg_proj/data/tools/bgen
+      cd bgen
+      wget http://code.enkre.net/bgen/tarball/release/bgen.tgz
+      tar -xvzf bgen.tgz
+      cd bgen.tgz
+      ./waf configure
+      ./waf
+
 Create the indexed files and also download the reference hg38 file which we will align to:
 
 
