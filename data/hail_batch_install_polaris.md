@@ -15,6 +15,9 @@ We will install using Conda environment:
   conda create -n hail
   conda activate hail
   pip install hail
+
+  # also need to install openjdk
+  conda install -c conda-forge openjdk
 ```
 
 Try it out!
