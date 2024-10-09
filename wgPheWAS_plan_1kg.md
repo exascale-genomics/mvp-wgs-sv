@@ -32,7 +32,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
     * Annotate with [VEP]()
   * Population analysis
     * SAIGE
-    * Regenie
+    * Regenie [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/regenie_install_polaris.md)]
     * Hail-batch [[progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/hail_batch_install_polaris.md)]
 4. Test each of the tools from the previous set
    * NVIDIA Clara-Parabricks - Succesfully ran workflow on low coverage and 30X whole-genome fastq sequences [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/parabricks_readme.md)]
