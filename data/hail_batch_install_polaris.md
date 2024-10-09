@@ -12,12 +12,12 @@ We will install using Conda environment:
   mkdir -p $hail_home
   cd $hail_home
 
-  conda create -n hail
+  conda create -n hail python'==3.9'
   conda activate hail
-  pip install hail
+  conda install conda-forge/label/cf202003::openjdk # java 11
+  conda install anaconda::libopenblas
+  pip install hail==0.2.132
 
-  # also need to install openjdk
-  conda install -c conda-forge openjdk
 ```
 
 Try it out!
@@ -31,3 +31,6 @@ To try `batch` out, open iPython or a Jupyter notebook and run:
     >>> j = b.new_job(name='hello')
     >>> j.command('echo "hello world"')
     >>> b.run()
+
+## HAIL ldscsim on Polaris
+ldscsim does not work on Polaris. We need to take a further look. For now I transferred the 1KG VCF to my  laptop and ran it locally.
