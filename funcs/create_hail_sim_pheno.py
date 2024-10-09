@@ -38,4 +38,3 @@ phenogeno_sim.cols().export("/Users/b54328/Desktop/pheno.tsv")
 
 
 
-
