@@ -47,7 +47,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 11. Perform post-process analysis on VCFs (i.e QC, annotations, etc) [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/funcs/merge_vcfs.py)]
 12. <b>Write paper on how VCFs were generated, what was found (computational and science?)</b>
 13. Create simulated phenotype files for 1KG VCF results. [Use link](https://github.com/bambrozio/bioinformatics/blob/master/utils/1k-genomes-phenotype-simulator.ipynb) to create phenotypes. To use Hail for phenotype creation look [here](https://bioinformatics.stackexchange.com/questions/10731/simulating-phenotype-with-the-1000-genomes-project). [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/funcs/create_hail_sim_pheno.py)]
-13. Setup SAIGE on Polaris
+13. Setup SAIGE on Polaris [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/SAIGE-GPU_install_polaris.md)]
 14. Setup Regenie on Polaris [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/regenie_install_polaris.md)]
 15. Run SAIGE for 1KG WG PGEN data
 16. Run Regenie for 1KG WG PGEN data
