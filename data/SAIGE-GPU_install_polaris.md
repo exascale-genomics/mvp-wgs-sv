@@ -19,8 +19,8 @@ module load conda/2024-04-29
 Create and activate a new Conda environment for SAIGE:
 
 ```bash
-conda create -n RSAIGE r-essentials r-base=4.2 python=3.10
-conda activate RSAIGE
+conda create -n RSAIGE_DOE r-essentials r-base=4.2 python=3.10
+conda activate RSAIGE_DOE
 conda env export > environment-RSAIGE.yml
 
 ```
