@@ -92,6 +92,20 @@ R CMD INSTALL --library=$PWD/SAIGE-GPU SAIGE-GPU
 
 If you encounter linking errors, ensure that the PKG_LIBS line in the Makevars file correctly references the MPI library.
 
+### Step 7: Update the paths to the SAIGE library in the step1 and step2 scripts
+You will need to update the paths on the scripts for step1 and step2 to your SAIGE library location:
+
+```./extdata/step1_fitNULLGLMM.R
+.libPaths(c(.libPaths(), "$PWD/SAIGE-GPU"))
+library(SAIGE)
+require(pbdMPI)
+```
+
+```./extdata/step2_SPAtests.R
+.libPaths(c(.libPaths(), "$PWD/SAIGE-GPU"))
+library(SAIGE)
+```
+
 ### Step 8: Verify Installation
 Check if the installation was successful by running the following commands:
 
