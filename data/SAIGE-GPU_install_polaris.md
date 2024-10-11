@@ -112,8 +112,8 @@ library(SAIGE)
 Check if the installation was successful by running the following commands:
 
 ```bash
-./step1_fitNULLGLMM.R --help
-./step2_SPAtests.R --help
+./extdata/step1_fitNULLGLMM.R --help
+./extdata/step2_SPAtests.R --help
 ```
 
 If the help information is displayed for each command, the installation is complete.
