@@ -43,7 +43,7 @@ Below is a draft of what steps are needed to achieve the goals on this project. 
 7. Create workflow for submitting the genomes [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/funcs/1kg_seq_map_call_polaris.py)]
 8. Generate statistics on rutime to determine how much our allocation on Polaris should be
 9. Start processing 1KG whole-genome through workflow pipeline [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/funcs/1kg_seq_map_call_polaris.py)]
-10. Convert VCF to Plink format for access to SAIGE.
+10. Convert VCF to Plink format for access to SAIGE [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/data/convert_vcf_to_plink.md)].
 11. Perform post-process analysis on VCFs (i.e QC, annotations, etc) [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/funcs/merge_vcfs.py)]
 12. <b>Write paper on how VCFs were generated, what was found (computational and science?)</b>
 13. Create simulated phenotype files for 1KG VCF results. [Use link](https://github.com/bambrozio/bioinformatics/blob/master/utils/1k-genomes-phenotype-simulator.ipynb) to create phenotypes. To use Hail for phenotype creation look [here](https://bioinformatics.stackexchange.com/questions/10731/simulating-phenotype-with-the-1000-genomes-project). [[Progress](https://github.com/exascale-genomics/mvp-wgs-sv/blob/main/funcs/create_hail_sim_pheno.py)]
