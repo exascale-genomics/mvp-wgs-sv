@@ -5,7 +5,12 @@ This guide provides steps to install SAIGE on the ALCF Polaris system using Cond
 ## Prerequisites
 
 1. **Access to Polaris**: Ensure you have access to the Polaris system.
-2. **Conda**: Conda should be available on Polaris. If not, load or install Conda manually.
+2. **Conda**: Conda should be available on Polaris.
+
+```bash
+module use /soft/modulefiles/
+module load conda/2024-04-29
+```
 
 ## Installation Steps
 
@@ -14,8 +19,10 @@ This guide provides steps to install SAIGE on the ALCF Polaris system using Cond
 Create and activate a new Conda environment for SAIGE:
 
 ```bash
-conda create -n saige-env -c conda-forge python=3.9
-conda activate saige-env
+conda create -n RSAIGE r-essentials r-base=4.2 python=3.10
+conda activate RSAIGE
+conda env export > environment-RSAIGE.yml
+
 ```
 
 ### Step 2: Install Dependencies
@@ -23,56 +30,67 @@ SAIGE requires several R packages and additional libraries. Install these with t
 
 
 ```bash
-conda install -c conda-forge r-base=4.2 r-essentials
-conda install -c conda-forge r-optparse r-rcpp r-rcpparmadillo r-matrix r-data.table r-littler
+conda install -c r r-rcpp  r-rcpparmadillo r-data.table r-bh r-matrix
+conda install -c conda-forge r-spatest r-rcppeigen r-devtools  r-skat r-rcppparallel r-optparse boost openblas r-rhpcblasctl r-metaskat r-skat r-qlcmatrix r-rsqlite r-matrix
 ```
 
-Then, install OpenMPI:
+Then, install OpenMPI and other dependencies:
 
 ```bash
 conda install -c conda-forge openmpi
+conda install -c anaconda cmake
+conda install -c conda-forge gettext lapack
+conda install bioconda::savvy
+conda install conda-forge::superlu
+pip3 install cget click
 ```
 
-### Step 3: Install the GMP Library
-Install the GMP library, required for multi-precision arithmetic operations:
+
+### Step 3: Install Additional Libraries
+Install other required libraries, such as Boost and zlib:
 
 ```bash
-conda install -c conda-forge gmp
+conda install -c conda-forge boost  zlib
 ```
 
-### Step 4: Install Additional Libraries
-Install other required libraries, such as Boost, CMake, and zlib:
-
-```bash
-conda install -c conda-forge boost cmake zlib
-```
-
-### Step 5: Clone and Configure SAIGE
+### Step 4: Clone and Configure SAIGE-GPU
 Clone the SAIGE repository and navigate to its directory:
 
 ```bash
-git clone https://github.com/weizhouUMICH/SAIGE.git
-cd SAIGE
+git clone https://github.com/exascale-genomics/SAIGE-GPU.git
+cd SAIGE-GPU
 ```
 
-### Step 6: Update the Makefile
-Modify the Makefile to specify the correct paths for OpenMPI. Locate the PKG_LIBS line and update it as follows:
+### Step 5: Update the ./src/Makevars
+Modify the Makevars file to specify the correct paths for OpenMPI. Locate the PKG_LIBS line and update it as follows:
 
-```makefile
+```Makevars
 PKG_LIBS += -I$(CONDA_PREFIX)/include -L$(CONDA_PREFIX)/lib -lmpi
 ```
 
 If you encounter errors related to -lmpi, try replacing it with -lmpi_cxx or -lmpicxx.
 
-### Step 7: Compile SAIGE
-To compile SAIGE, first clean any previous builds and then run make:
+In addition, modify the top lines in the Makevars file by commenting out the "showme" commands and adding the "cray" lines:
+
+```Makevars
+MPI_CPPFLAGS = $(shell CC --cray-print-opts=cflags)
+MPI_LDFLAGS = $(shell CC --cray-print-opts=libs)
+
+#MPI_CPPFLAGS = $(shell mpic++ -showme:compile)
+#MPI_LDFLAGS = $(shell mpic++ -showme:link)
+```
+
+
+### Step 6: Compile SAIGE
+To compile SAIGE-GPU, first clean any previous builds and then run make:
 
 ```bash
 make clean
-make
+cd ../.
+R CMD INSTALL --library=$PWD/SAIGE-GPU SAIGE-GPU
 ```
 
-If you encounter linking errors, ensure that the PKG_LIBS line in the Makefile correctly references the MPI library.
+If you encounter linking errors, ensure that the PKG_LIBS line in the Makevars file correctly references the MPI library.
 
 ### Step 8: Verify Installation
 Check if the installation was successful by running the following commands:
