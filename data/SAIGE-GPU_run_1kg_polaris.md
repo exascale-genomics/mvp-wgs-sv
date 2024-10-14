@@ -38,15 +38,17 @@ conda activate RSAIGE_DOE
 Use the `mpiexec` command to run the SAIGE step 1 script, `step1_fitNULLGLMM.R`, with your desired parameters. Adjust the paths and options according to your files and analysis requirements:
 
 ```bash
+path_to_saige="/grand/projects/GeomicVar/rodriguez/1kg_proj/data/tools/SAIGE-GPU"
+output_path="/grand/projects/GeomicVar/rodriguez/1kg_proj/output"
 mpiexec -n 1 Rscript $path_to_saige/extdata/step1_fitNULLGLMM.R \
-  --plinkFile=/grand/projects/GeomicVar/rodriguez/1kg_proj/output/merged/merged.anno \
-  --phenoFile=/grand/projects/GeomicVar/rodriguez/1kg_proj/output/sim_phenotype/pheno.tsv \
+  --plinkFile=$output_path/merged/merged.anno.geno.hwe.maf.pruned \
+  --phenoFile=$output_path/sim_phenotype/pheno.tsv \
   --invNormalize=FALSE \
   --phenoCol=y_binarized \
   --covarColList=sc \
   --sampleIDColinphenoFile=s \
   --traitType=binary \
-  --outputPrefix=/grand/projects/GeomicVar/rodriguez/1kg_proj/output/SAIGE_test/sim_test \
+  --outputPrefix=$output_path/SAIGE_test/sim_test \
   --minMAFforGRM 0.01 \
   --LOCO FALSE \
   --IsOverwriteVarianceRatioFile=TRUE \
