@@ -85,7 +85,6 @@ MPI_LDFLAGS = $(shell CC --cray-print-opts=libs)
 To compile SAIGE-GPU, first clean any previous builds and then run make:
 
 ```bash
-make clean
 cd ../.
 R CMD INSTALL --library=$PWD/SAIGE-GPU SAIGE-GPU
 ```
