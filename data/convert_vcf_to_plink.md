@@ -143,3 +143,8 @@ This will produce a new set of pruned PLINK files:
 
 - **Error: `cannot contain multiallelic variants`** - Ensure input files contain only biallelic variants. You may need to pre-process the files to remove multiallelic variants.
 - **Error: `non-unique variant IDs`** - Use the `--set-all-var-ids` option as demonstrated to create unique IDs.
+
+## Notes
+- Variant Filtrations:
+Variants were combined across the Wellderly and ITMI cohorts via GenomeComb and filtered using metrics based on optimized features selected based on concordance between monozygotic twins (Reumers et al., 2011) and refined based on observed GWAS genomic inflation. These filters excluded variants that were (1) labeled as VQLOW in all individuals, (2) clustered in >10% of individuals from either cohort, (3) variants missing in >10% of either cohort, 4) with median coverage <10 or >100 in either cohort, 5) in simple repeats, homopolymer repeats ≥6 bp, segmental duplications, microsatellite repeats, or low-complexity repeats, (5) out of the Hardy-Weinberg Equilibrium (p value < 1 × 10−5), and (6) in non-unique 36-mers (Derrien et al., 2012). VQLOW genotypes were set to missing. For common variant analyses, an additional filter for variants <5% minor allele frequency in either cohort was applied. For rare variant analyses, an additional filter for variants >1% minor allele frequency in either cohort was applied, as well as a minimum allele depth filter, where if 20% of individuals with a rare variant alternate allele call had a minimum alternate allele depth of <25% of total reads or fewer than three supporting reads, the variant was considered a false positive and removed.
+
