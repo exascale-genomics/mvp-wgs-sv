@@ -92,6 +92,35 @@ Rscript $path_to_saige/extdata/step1_fitNULLGLMM.R --help
 
 If the help information is displayed for each command, the installation is complete.
 
+You can also run a test with the provided test input files. You can replace `mpirun -n 4` in the command below with the appropriate number of GPUs you have available.
+
+```bash
+# ask for a node
+qsub -A geomicVar -I -l select=1 -l walltime=1:00:00 -l filesystems=home:eagle -q debug
+
+# once the node is provided
+module use /soft/modulefiles/
+module load conda
+conda activate /grand/projects/GeomicVar/rodriguez/conda_envs/RSAIGE_GPU_V2
+
+path_to_saige=~/SAIGE-GPU_3/SAIGE-DOE
+mpirun -n 4 Rscript $path_to_saige/extdata/step1_fitNULLGLMM.R \
+--plinkFile=$path_to_saige/extdata/input/plinkforGRM_1000samples_10kMarkers \
+--phenoFile=$path_to_saige/extdata/input/pheno_1000samples.txt \
+--invNormalize=FALSE \
+--phenoCol=y \
+--covarColList=x1,x2 \
+--sampleIDColinphenoFile=IID \
+--traitType=binary \
+--outputPrefix=./GPU_step1_output \
+--minMAFforGRM 0.01 \
+--LOCO  \
+ --IsOverwriteVarianceRatioFile=TRUE \
+--nThreads=1
+```
+
+You should see a succesful run where all GPUs are used. The log should provide the IDs of the GPUs used.
+
 ## Troubleshooting
 
 - **Library Not Found Error (`-lmp` not found)**:
