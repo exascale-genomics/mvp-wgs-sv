@@ -31,16 +31,16 @@ module load conda
 Activate your Conda environment where SAIGE-GPU is installed. For example:
 
 ```bash
-conda activate RSAIGE_DOE
+conda activate /grand/projects/GeomicVar/rodriguez/conda_envs/RSAIGE_GPU_V2
 ```
 
 ### 4. Run SAIGE Step 1: Fit NULL GLMM
 Use the `mpiexec` command to run the SAIGE step 1 script, `step1_fitNULLGLMM.R`, with your desired parameters. Adjust the paths and options according to your files and analysis requirements:
 
 ```bash
-path_to_saige="/grand/projects/GeomicVar/rodriguez/1kg_proj/data/tools/SAIGE-GPU"
+path_to_saige=~/SAIGE-GPU_3/SAIGE-DOE
 output_path="/grand/projects/GeomicVar/rodriguez/1kg_proj/output"
-mpiexec -n 1 Rscript $path_to_saige/extdata/step1_fitNULLGLMM.R \
+mpiexec -n 4 Rscript $path_to_saige/extdata/step1_fitNULLGLMM.R \
   --plinkFile=$output_path/merged/merged.anno.geno.hwe.maf.pruned \
   --phenoFile=$output_path/sim_phenotype/pheno.tsv \
   --invNormalize=FALSE \
@@ -65,8 +65,7 @@ Replace `$path_to_saige` with the path where SAIGE-GPU is installed on your syst
 ## Additional Information
 
 - Ensure that your phenotype file is formatted correctly and that all specified columns (e.g., `--phenoCol`, `--covarColList`, `--sampleIDColinphenoFile`) are present in the file.
+- Ensure that your Plink input bim file does not have chromosomes with textual form (i.e. `X`, `Y`). Replace with `23` and `24` respectively if they appear.
 - For larger data sets, consider adjusting the `memoryChunk` value to better accommodate your system's available memory.
-- If you encounter memory issues, try lowering the number of threads with the `--nThreads` parameter or reducing the dataset size temporarily to isolate the problem.
-- For detailed troubleshooting, refer to the SAIGE documentation and verify that all required dependencies are properly installed and configured.
 
 By following these instructions, you should be able to successfully run SAIGE-GPU on Polaris. Adjust the parameters as necessary for your specific analysis needs.
