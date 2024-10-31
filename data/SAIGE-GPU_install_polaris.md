@@ -14,105 +14,80 @@ module load conda/2024-04-29
 
 ## Installation Steps
 
-### Step 1: Create a Conda Environment
+### Step 1: Create directory and clone the SAIGE-DOE GitHub repository
 
 Create and activate a new Conda environment for SAIGE:
 
 ```bash
-conda create -n RSAIGE_DOE r-essentials r-base=4.2 python=3.10
-conda activate RSAIGE_DOE
-conda env export > environment-RSAIGE.yml
-
-```
-
-### Step 2: Install Dependencies
-SAIGE requires several R packages and additional libraries. Install these with the following commands:
-
-
-```bash
-conda install -c r r-rcpp  r-rcpparmadillo r-data.table r-bh r-matrix
-conda install -c conda-forge r-spatest r-rcppeigen r-devtools  r-skat r-rcppparallel r-optparse boost openblas r-rhpcblasctl r-metaskat r-skat r-qlcmatrix r-rsqlite r-matrix
-```
-
-Then, install OpenMPI and other dependencies:
-
-```bash
-conda install -c conda-forge openmpi
-conda install -c anaconda cmake
-conda install -c conda-forge gettext lapack
-conda install bioconda::savvy
-conda install conda-forge::superlu
-pip3 install cget click
-```
-
-
-### Step 3: Install Additional Libraries
-Install other required libraries, such as Boost and zlib:
-
-```bash
-conda install -c conda-forge boost  zlib
-```
-
-### Step 4: Clone and Configure SAIGE-GPU
-Clone the SAIGE repository and navigate to its directory:
-
-```bash
-git clone https://github.com/exascale-genomics/SAIGE-GPU.git
+mkdir SAIGE-GPU
 cd SAIGE-GPU
+git clone https://github.com/exascale-genomics/SAIGE-DOE.git
+cd SAIGE-DOE/
+git pull origin SAIGE-step1GPU-step2Wei-openmpi
 ```
 
-### Step 5: Update the ./src/Makevars
-Modify the Makevars file to specify the correct paths for OpenMPI. Locate the PKG_LIBS line and update it as follows:
+### Step 2: Create a Conda Environment
 
-```Makevars
-PKG_LIBS += -I$(CONDA_PREFIX)/include -L$(CONDA_PREFIX)/lib -lmpi
+Create and activate a new Conda environment for SAIGE. We will be using the existing YML file from the repository.
+In this example I am naming my environment `RSAIGE_GPU_V2`, you can replace with your desired name. 
+In addition, due to the size of the conda environment and packages, I will be installing the environment in a different mount where I have more space. You can create your environment either in your home directory if you have enough space, or your project space.
+
+```bash
+conda env create  --file=./conda_env/environment-RSAIGE.yml -p /grand/projects/GeomicVar/rodriguez/conda_envs/RSAIGE_GPU_V2
+conda activate /grand/projects/GeomicVar/rodriguez/conda_envs/RSAIGE_GPU_V2
 ```
 
-If you encounter errors related to -lmpi, try replacing it with -lmpi_cxx or -lmpicxx.
+### Step 3: Install Dependencies
+SAIGE requires several packages and libraries. Install these with the following commands:
 
-In addition, modify the top lines in the Makevars file by commenting out the "showme" commands and adding the "cray" lines:
 
-```Makevars
-MPI_CPPFLAGS = $(shell CC --cray-print-opts=cflags)
-MPI_LDFLAGS = $(shell CC --cray-print-opts=libs)
-
-#MPI_CPPFLAGS = $(shell mpic++ -showme:compile)
-#MPI_LDFLAGS = $(shell mpic++ -showme:link)
+```bash
+pip3 install cget click
+conda install cuda -c nvidia/label/cuda-11.4.3
 ```
 
+You need to install openMPI version `4.1.5`. This is difficult to perform within Conda, so we will install separately, but then include it in our Conda environment:
 
-### Step 6: Compile SAIGE
+```bash
+cd /grand/projects/GeomicVar/rodriguez/conda_envs/pkgs
+wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.5.tar.gz tar -xzf openmpi-4.1.5.tar.gz
+cd openmpi-4.1.5
+./configure --prefix=/grand/projects/GeomicVar/rodriguez/conda_envs/RSAIGE_GPU_V2/opt/openmpi
+make -j4
+make install
+export PATH=/grand/projects/GeomicVar/rodriguez/conda_envs/RSAIGE_GPU_V2/opt/openmpi/bin:$PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/grand/projects/GeomicVar/rodriguez/conda_envs/RSAIGE_GPU_V2/opt/openmpi/lib
+
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+mkdir -p $CONDA_PREFIX/etc/conda/deactivate.d
+echo 'export PATH=$CONDA_PREFIX/opt/openmpi/bin:$PATH' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+echo 'export LD_LIBRARY_PATH=$CONDA_PREFIX/opt/openmpi/lib:$LD_LIBRARY_PATH' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+```
+
+Install other required libraries, such as pbdMPI, savvy, superlu:
+
+```bash
+Rscript -e 'install.packages("pbdMPI", repos=c("https://cloud.r-project.org"))'
+conda install -c conda-forge -c bioconda savvy
+conda install conda-forge::superlu
+```
+
+### Step 4: Compile SAIGE
 To compile SAIGE-GPU, first clean any previous builds and then run make:
 
 ```bash
-cd ../.
-R CMD INSTALL --library=$PWD/SAIGE-GPU SAIGE-GPU
+cd ~/SAIGE-GPU
+R CMD INSTALL SAIGE-DOE
 ```
 
 If you encounter linking errors, ensure that the PKG_LIBS line in the Makevars file correctly references the MPI library.
 
-### Step 7: Update the paths to the SAIGE library in the step1 and step2 scripts
-You will need to update the paths on the scripts for step1 and step2 to your SAIGE library location:
-
-`./extdata/step1_fitNULLGLMM.R`:
-```./extdata/step1_fitNULLGLMM.R
-.libPaths(c(.libPaths(), "$PWD/SAIGE-GPU"))
-library(SAIGE)
-require(pbdMPI)
-```
-
-`./extdata/step2_SPAtests.R`:
-```./extdata/step2_SPAtests.R
-.libPaths(c(.libPaths(), "$PWD/SAIGE-GPU"))
-library(SAIGE)
-```
-
-### Step 8: Verify Installation
-Check if the installation was successful by running the following commands:
+### Step 5: Verify Installation
+Check if the installation was successful by running the following commands where the output should be the list of parameter options:
 
 ```bash
-./extdata/step1_fitNULLGLMM.R --help
-./extdata/step2_SPAtests.R --help
+path_to_saige=~/SAIGE-GPU_3/SAIGE-DOE
+Rscript $path_to_saige/extdata/step1_fitNULLGLMM.R --help
 ```
 
 If the help information is displayed for each command, the installation is complete.
