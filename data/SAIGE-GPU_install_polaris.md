@@ -114,7 +114,7 @@ mpirun -n 4 Rscript $path_to_saige/extdata/step1_fitNULLGLMM.R \
 --traitType=binary \
 --outputPrefix=./GPU_step1_output \
 --minMAFforGRM 0.01 \
---LOCO  \
+--LOCO FALSE \
  --IsOverwriteVarianceRatioFile=TRUE \
 --nThreads=1
 ```
